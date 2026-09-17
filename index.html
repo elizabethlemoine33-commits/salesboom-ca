@@ -154,7 +154,8 @@ schema: |
 }
 .proof-head { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .proof-row { display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 6px; }
-.proof-platform { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); min-width: 58px; }
+.proof-platform { min-width: 58px; display: flex; align-items: center; }
+.proof-logo { height: 36px; width: auto; display: block; }
 .proof-score { font-family: 'Lora', serif; font-size: 28px; font-weight: 700; color: var(--orange); line-height: 1; }
 .proof-stars { color: var(--orange); font-size: 13px; letter-spacing: 1.5px; }
 .proof-count { font-size: 13px; color: var(--muted); }
@@ -290,7 +291,7 @@ schema: |
       <div class="hero-proof" aria-label="Third-party ratings">
         <div class="proof-head">Independently verified ratings</div>
         <div class="proof-row">
-          <div class="proof-platform">G2</div>
+          <div class="proof-platform"><img src="/assets/img/logo-g2.png" alt="G2" class="proof-logo"></div>
           <div>
             <div class="proof-score">4.5</div>
             <div class="proof-stars" aria-label="4.5 out of 5 stars">★★★★★</div>
@@ -298,7 +299,7 @@ schema: |
           <div class="proof-count">24 verified<br>reviews</div>
         </div>
         <div class="proof-row">
-          <div class="proof-platform">Capterra</div>
+          <div class="proof-platform"><img src="/assets/img/logo-capterra.png" alt="Capterra" class="proof-logo"></div>
           <div>
             <div class="proof-score">4.3</div>
             <div class="proof-stars" aria-label="4.3 out of 5 stars">★★★★★</div>
