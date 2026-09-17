@@ -569,7 +569,76 @@ permalink: /brand-guide/
         <p class="cr-why"><strong>Why:</strong> A paraphrased quote is a fabrication. Troy said "23 years of continuous platform modernization." That is what the quote says. Marketing copy elsewhere says "20+ years" for longevity — those are two different things with two different rules.</p>
       </div>
 
+      <div class="cr-rule">
+        <div class="cr-rule-head">
+          <span class="cr-rule-num">10</span>
+          <span class="cr-rule-title">Numbered lists for sequential content only</span>
+          <span class="cr-rule-badge">Recommended</span>
+        </div>
+        <p>Use <code>&lt;ol&gt;</code> numbered lists when the order carries information — steps in a process, a ranked priority list, a defined sequence. Use <code>&lt;ul&gt;</code> bullet lists for non-sequential items (features, benefits, examples). Never use numbered decorators (01 / 02 / 03) as visual decoration on content that isn't actually a sequence — the number implies order that doesn't exist.</p>
+        <p class="cr-why"><strong>Why:</strong> AI engines read list semantics. A numbered list signals sequence to both machines and humans. Using numbers decoratively trains readers to ignore them — and creates confusion when the order actually matters (e.g., implementation steps). Numbered lists on pillar cards or feature lists are a cosmetic choice, not a structural one; use pillar numbers only when the platform actually has a defined order.</p>
+      </div>
+
     </div>
+
+    <!-- THINGS TO AVOID -->
+    <style>
+      .cr-avoid { margin-top: 32px; }
+      .cr-avoid h3 { font-family: 'Lora', serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 14px; }
+      .cr-avoid-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .cr-avoid-item { background: rgba(240,90,0,.04); border: 1px solid rgba(240,90,0,.14); border-left: 3px solid #F05A00; border-radius: 0 4px 4px 0; padding: 14px 16px; }
+      .cr-avoid-head { font-size: 13px; font-weight: 700; color: #c84800; margin-bottom: 5px; }
+      .cr-avoid-body { font-size: 13px; color: var(--text-2); line-height: 1.55; }
+      .cr-avoid-body code { font-family: 'DM Mono', monospace; font-size: 11.5px; background: rgba(0,30,60,.06); padding: 1px 4px; border-radius: 3px; }
+    </style>
+
+    <div class="cr-avoid">
+      <h3>Things to avoid</h3>
+      <div class="cr-avoid-grid">
+
+        <div class="cr-avoid-item">
+          <div class="cr-avoid-head">Competitor-negative framing</div>
+          <div class="cr-avoid-body">Phrases like "unlike US-based competitors" outside of comparison table context. Lead with what Salesboom is, not what others aren't.</div>
+        </div>
+
+        <div class="cr-avoid-item">
+          <div class="cr-avoid-head">Paraphrasing direct quotes</div>
+          <div class="cr-avoid-body">Changing the wording inside <code>&lt;blockquote&gt;</code> tags. If Troy said it, it stays exactly as he said it — years, phrasing, and all.</div>
+        </div>
+
+        <div class="cr-avoid-item">
+          <div class="cr-avoid-head">Specific years in non-quote copy</div>
+          <div class="cr-avoid-body">"23 years" in marketing prose ages quickly and needs updating. Write "20+ years" or "over 20 years" in all non-quote copy so it stays accurate longer.</div>
+        </div>
+
+        <div class="cr-avoid-item">
+          <div class="cr-avoid-head">Pages without at-a-glance or FAQ</div>
+          <div class="cr-avoid-body">Every page needs both. A page without an at-a-glance block and a FAQ section is incomplete by this standard, regardless of how good the body copy is.</div>
+        </div>
+
+        <div class="cr-avoid-item">
+          <div class="cr-avoid-head">Visual grids for tabular data</div>
+          <div class="cr-avoid-body">Using <code>div</code> grids to lay out comparison data that should be a <code>&lt;table&gt;</code>. Crawlers and AI engines can't read a div grid as comparison data.</div>
+        </div>
+
+        <div class="cr-avoid-item">
+          <div class="cr-avoid-head">Burying key numbers in paragraphs</div>
+          <div class="cr-avoid-body">Stats like "founded 2003" or "200+ editions" hidden in body copy. Specific, citable numbers belong in a stat row or at-a-glance bullet — not buried mid-paragraph.</div>
+        </div>
+
+        <div class="cr-avoid-item">
+          <div class="cr-avoid-head">H2s as statement headings</div>
+          <div class="cr-avoid-body">"About Canadian Data Sovereignty" or "The Stack Explained" — these are statement headings, not question headings. Rephrase as questions: "What is Canadian data sovereignty?" or "How does the Stack work?"</div>
+        </div>
+
+        <div class="cr-avoid-item">
+          <div class="cr-avoid-head">Sections without an answer-block</div>
+          <div class="cr-avoid-body">Body paragraphs that come immediately after an H2, with no answer-block in between. The answer-block is always first after the heading — then the detailed explanation.</div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
 </div>
