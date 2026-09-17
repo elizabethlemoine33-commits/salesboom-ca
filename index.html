@@ -1,0 +1,400 @@
+---
+layout: default
+title: "Salesboom — Canada's Enterprise CRM | Data Sovereignty Since 2003"
+description: "Salesboom is Canada's enterprise CRM — built, owned, and hosted in Canada since 2003. No CLOUD Act exposure. A2A-ready agentic infrastructure. Pricing in CAD."
+schema: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://salesboom.bynorthlight.ca/#org",
+        "name": "Salesboom Inc.",
+        "url": "https://salesboom.bynorthlight.ca/",
+        "foundingDate": "2003",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Halifax, Nova Scotia, Canada"
+        },
+        "description": "Canada's first Cloud CRM vendor. Canadian-owned, Canadian-hosted enterprise software since 2003.",
+        "sameAs": ["https://www.linkedin.com/company/salesboom-com/"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://salesboom.bynorthlight.ca/#website",
+        "url": "https://salesboom.bynorthlight.ca/",
+        "name": "Salesboom — Canadian Enterprise CRM",
+        "publisher": {"@id": "https://salesboom.bynorthlight.ca/#org"}
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://salesboom.bynorthlight.ca/",
+        "url": "https://salesboom.bynorthlight.ca/",
+        "name": "Salesboom — Canada's Enterprise CRM",
+        "isPartOf": {"@id": "https://salesboom.bynorthlight.ca/#website"},
+        "about": {"@id": "https://salesboom.bynorthlight.ca/#org"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the CLOUD Act and why does it matter for Canadian enterprise data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The US Clarifying Lawful Overseas Use of Data (CLOUD Act) allows US law enforcement to compel American companies to produce customer data held anywhere in the world — including on servers located in Canada. If your CRM or cloud software vendor has a US parent company, your Canadian enterprise data can be accessed by US authorities without a Canadian warrant. Salesboom is Canadian and has no US parent entity. Your data is governed exclusively by Canadian law and is not subject to CLOUD Act compulsion."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between data residency and data sovereignty?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Data residency means your data is physically stored in a specific country. Data sovereignty means it is governed by that country's laws and cannot be compelled by a foreign government. AWS Canada, Azure Canada, and Google Cloud Canada offer data residency — but because their parent companies are US corporations, they cannot offer true sovereignty. Salesboom offers both: Canadian servers and Canadian corporate ownership."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we keep our existing CRM and still use Salesboom?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Salesboom runs headless as a CRM for your CRM. The Revenue Engine, Integration Station, and Data Engine connect to Salesforce, HubSpot, Microsoft Dynamics, Pipedrive, and most major platforms via API, MCP, and A2A. You can add Canadian sovereignty, agentic AI infrastructure, and RevOps capability without replacing your existing system."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Canadian Enterprise Stack?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Canadian Enterprise Stack is Salesboom's ten-pillar enterprise platform: Revenue Engine (CRM + GTM + RevOps), Integration Station (middleware OS), Data Engine (MDM), AMS (Agent Management System), Demandinator (demand generation), Promptuit (prompt management), Content Relationship Management, Context Engine, plus the implementation services layer — Fast Track, Built to Suit, and People as a Service. Each pillar deploys independently or as an integrated system, hosted on 100% Canadian bare-metal infrastructure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is People as a Service?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "People as a Service is Salesboom's fractional talent delivery model. Rather than selling software alone, Salesboom provides dedicated Canadian professionals — developers, system architects, marketers, data analysts, operations specialists, and CRM concierge teams — embedded in your organization for the engagement. This is not Sales as a Service; it is a full cross-functional capability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is A2A and how does Salesboom use it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Agent-to-Agent (A2A) is an integration protocol that allows AI agents to communicate directly with each other and with third-party software without a human logging in. Salesboom's AMS deploys A2A-enabled sourcing agents that find, vet, and add leads, opportunities, employees, contractors, skills, and other agents to your CRM — measured against department ICPs with human-in-the-loop approval required before any add. Salesboom is Canada's first CRM with published A2A capability."
+            }
+          }
+        ]
+      }
+    ]
+  }
+---
+
+<style>
+/* ══ HERO ══ */
+.hero { background: var(--bg); padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
+.hero-inner { display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: center; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .11em; text-transform: uppercase;
+  color: var(--blue); border: 1px solid rgba(0,60,120,.18); background: rgba(0,60,120,.04);
+  padding: 4px 12px; border-radius: 20px; margin-bottom: 22px;
+}
+.hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+.hero h1 {
+  font-family: 'Fraunces', serif; font-size: clamp(34px, 4.5vw, 50px);
+  font-weight: 700; line-height: 1.08; color: var(--text); margin-bottom: 18px; text-wrap: balance;
+}
+.hero h1 em { font-style: italic; font-weight: 300; color: var(--orange); }
+
+/* At-a-Glance block — GEO citability signal */
+.at-a-glance {
+  background: rgba(0,60,120,.04); border: 1px solid rgba(0,60,120,.14);
+  border-left: 3px solid var(--blue); border-radius: 4px;
+  padding: 14px 18px; margin-bottom: 22px;
+}
+.at-a-glance-label {
+  font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 8px;
+}
+.at-a-glance ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.at-a-glance li {
+  font-size: 14px; color: var(--text-2); padding-left: 16px; position: relative; line-height: 1.5;
+}
+.at-a-glance li::before { content: '→'; position: absolute; left: 0; color: var(--blue); font-size: 12px; top: 3px; }
+
+.hero-sub { font-size: 16px; color: var(--text-2); line-height: 1.72; margin-bottom: 30px; max-width: 520px; }
+.hero-ctas { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 32px; }
+.trust-strip { display: flex; flex-wrap: wrap; gap: 10px 18px; border-top: 1px solid var(--border); padding-top: 20px; }
+.trust-item {
+  font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--muted); display: flex; align-items: center; gap: 5px;
+}
+.trust-item::before { content: '✓'; color: var(--green); font-weight: 700; }
+
+/* Hero proof panel */
+.hero-proof {
+  background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px;
+  padding: 22px; display: flex; flex-direction: column; gap: 14px;
+}
+.proof-head { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.proof-row { display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 6px; }
+.proof-platform { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); min-width: 58px; }
+.proof-score { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 700; color: var(--orange); line-height: 1; }
+.proof-stars { color: var(--orange); font-size: 13px; letter-spacing: 1.5px; }
+.proof-count { font-size: 13px; color: var(--muted); }
+.proof-divider-h { height: 1px; background: var(--border); }
+.proof-quote-mini { font-family: 'Fraunces', serif; font-size: 15px; font-style: italic; font-weight: 300; color: var(--text-2); line-height: 1.62; }
+.proof-quote-attr { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; margin-top: 6px; letter-spacing: .05em; }
+
+/* ══ METRICS ══ */
+.metrics { background: var(--blue); }
+.metrics-inner { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1060px; margin: 0 auto; }
+.metric-cell { padding: 22px 20px; border-right: 1px solid rgba(255,255,255,.12); text-align: center; }
+.metric-cell:last-child { border-right: none; }
+.metric-num { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 4px; }
+.metric-label { font-size: 13px; color: rgba(255,255,255,.80); font-weight: 500; line-height: 1.35; }
+
+/* ══ WHY CANADA ══ */
+.why-canada { background: var(--navy); padding: 72px 0; }
+.why-head-row { text-align: center; margin-bottom: 48px; }
+.why-head-row h2 { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 14px; }
+.why-head-row h2 em { font-style: italic; font-weight: 300; color: var(--blue-light); }
+.why-head-row p { font-size: 15.5px; color: rgba(255,255,255,.72); max-width: 580px; margin: 0 auto; line-height: 1.65; }
+.why-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin-bottom: 40px; }
+.why-cards { display: flex; flex-direction: column; gap: 10px; }
+.why-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-left: 3px solid var(--blue-light); padding: 14px 16px; border-radius: 3px; }
+.why-card h3 { font-size: 13.5px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+.why-card p  { font-size: 12.5px; color: rgba(255,255,255,.68); margin: 0; line-height: 1.5; }
+.why-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--blue-light); margin-top: 20px; }
+.compare-table-wrap { overflow-x: auto; }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.compare-table th { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .09em; text-transform: uppercase; font-weight: 500; color: rgba(255,255,255,.55); padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,.1); text-align: left; white-space: nowrap; }
+.compare-table th:not(:first-child) { text-align: center; }
+.compare-table td { padding: 9px 16px; border-bottom: 1px solid rgba(255,255,255,.05); color: rgba(255,255,255,.72); vertical-align: middle; }
+.compare-table td:not(:first-child) { text-align: center; }
+.compare-table .th-salesboom { color: #fff !important; font-weight: 700; }
+.compare-table .yes  { color: #5ED08C; font-size: 15px; font-weight: 700; }
+.compare-table .no   { color: rgba(255,255,255,.25); font-size: 15px; }
+.compare-table .row-hl td { background: rgba(0,120,60,.08); }
+.compare-table td.feature { font-weight: 500; color: rgba(255,255,255,.88); font-size: 12.5px; }
+
+/* ══ STACK ══ */
+.stack-section { background: var(--bg-alt); padding: 72px 0; }
+.stack-section h2 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
+.stack-section h2 em { font-style: italic; font-weight: 300; color: var(--blue); }
+.section-intro { font-size: 15px; color: var(--text-2); max-width: 560px; line-height: 1.65; margin-bottom: 32px; }
+.stack-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.stack-card { background: var(--card); border: 1px solid var(--border); border-top: 3px solid var(--blue); padding: 20px 22px; border-radius: 4px; transition: box-shadow .2s, transform .18s; }
+.stack-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.stack-pill { display: inline-block; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: var(--blue); border: 1px solid rgba(0,60,120,.25); padding: 2px 8px; border-radius: 3px; margin-bottom: 10px; }
+.stack-card h3 { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.stack-card p  { font-size: 13px; color: var(--text-2); line-height: 1.55; }
+
+/* ══ SERVICES ══ */
+.services-section { background: var(--bg); padding: 72px 0; }
+.services-section h2 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
+.services-section h2 em { font-style: italic; font-weight: 300; color: var(--blue); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; list-style: none; padding: 0; }
+.service-card { background: var(--card); border: 1px solid var(--border); padding: 24px 20px; border-radius: 4px; }
+.svc-num { font-family: 'Fraunces', serif; font-size: 38px; font-weight: 700; color: var(--blue); opacity: .15; line-height: 1; margin-bottom: 12px; }
+.svc-tag { display: inline-block; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .07em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; font-weight: 500; margin-bottom: 10px; }
+.svc-tag-blue   { background: rgba(0,60,120,.08);  color: var(--blue); }
+.svc-tag-orange { background: rgba(240,90,0,.10);  color: var(--orange); }
+.svc-tag-green  { background: rgba(0,120,60,.08);  color: var(--green); }
+.service-card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.service-card p  { font-size: 13px; color: var(--text-2); line-height: 1.6; margin-bottom: 14px; }
+.service-link    { font-size: 12.5px; font-weight: 600; color: var(--blue); }
+
+/* ══ FAQ ══ */
+.faq-section { background: var(--bg-alt); padding: 64px 0; }
+.faq-section h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
+.faq-section h2 em { font-style: italic; font-weight: 300; color: var(--blue); }
+.faq-intro { font-size: 14.5px; color: var(--text-2); margin-bottom: 28px; }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-top: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: 1px solid var(--border); }
+.faq-item details { width: 100%; }
+.faq-item summary { list-style: none; cursor: pointer; padding: 18px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; user-select: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-q { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--text); line-height: 1.3; }
+.faq-icon { flex-shrink: 0; width: 22px; height: 22px; border: 1.5px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; line-height: 1; color: var(--muted); transition: transform .2s, background .2s, border-color .2s; font-family: 'DM Mono', monospace; }
+.faq-item details[open] .faq-icon { transform: rotate(45deg); background: var(--blue); border-color: var(--blue); color: #fff; }
+.faq-item details[open] .faq-q { color: var(--blue); }
+.faq-a { padding-bottom: 20px; font-size: 14px; color: var(--text-2); line-height: 1.72; max-width: 820px; }
+.faq-a strong { color: var(--text); }
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-proof { max-width: 440px; }
+  .why-two-col { grid-template-columns: 1fr; }
+  .metrics-inner { grid-template-columns: repeat(2, 1fr); }
+  .stack-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .hero h1 { font-size: 30px; }
+  .services-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- ══ HERO ══ -->
+<section class="hero" aria-label="Hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Canadian-owned · Canadian-hosted · No US parent entity
+        </div>
+
+        <h1>Let Salespeople <em>Sell Again.</em></h1>
+
+        <div class="at-a-glance" aria-label="At a glance">
+          <div class="at-a-glance-label">At a glance</div>
+          <ul>
+            <li>Canada's first and only enterprise CRM built, owned, and hosted on Canadian soil — no US parent entity, no CLOUD Act exposure</li>
+            <li>23-year platform with A2A-ready agentic infrastructure, 200+ vertical editions, and CAD pricing</li>
+            <li>Headless deployment alongside Salesforce, HubSpot, or any existing stack — no forced migration</li>
+          </ul>
+        </div>
+
+        <p class="hero-sub">The Canadian Enterprise Stack — 23 years of enterprise CRM built and hosted on Canadian soil. Genuine data sovereignty, A2A-ready agentic infrastructure, and the implementation expertise to close the gap. No CLOUD Act exposure. Pricing in CAD.</p>
+        <div class="hero-ctas">
+          <a href="#" class="btn-green">Start Free (CAD)</a>
+          <a href="#" class="btn-outline-blue">Book a Conversation →</a>
+        </div>
+        <div class="trust-strip" aria-label="Trust indicators">
+          <span class="trust-item">100% Canadian infrastructure</span>
+          <span class="trust-item">PIPEDA &amp; CASL compliant</span>
+          <span class="trust-item">CLOUD Act insulated</span>
+          <span class="trust-item">CAD pricing · no FX risk</span>
+          <span class="trust-item">Founded 2003 · Halifax NS</span>
+        </div>
+      </div>
+
+      <div class="hero-proof" aria-label="Third-party ratings">
+        <div class="proof-head">Independently verified ratings</div>
+        <div class="proof-row">
+          <div class="proof-platform">G2</div>
+          <div>
+            <div class="proof-score">4.5</div>
+            <div class="proof-stars" aria-label="4.5 out of 5 stars">★★★★★</div>
+          </div>
+          <div class="proof-count">24 verified<br>reviews</div>
+        </div>
+        <div class="proof-row">
+          <div class="proof-platform">Capterra</div>
+          <div>
+            <div class="proof-score">4.3</div>
+            <div class="proof-stars" aria-label="4.3 out of 5 stars">★★★★★</div>
+          </div>
+          <div class="proof-count">37 verified<br>reviews</div>
+        </div>
+        <div class="proof-divider-h"></div>
+        <div>
+          <blockquote class="proof-quote-mini" cite="https://salesboom.ca">
+            "23 years of continuous platform modernization — from early web browsers to agentic AI — without breaking organizational continuity."
+          </blockquote>
+          <cite class="proof-quote-attr">— Troy Muise, CEO &amp; Co-Founder, Salesboom Inc.</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ METRICS ══ -->
+<div class="metrics" aria-label="Key metrics">
+  <div class="metrics-inner">
+    <div class="metric-cell"><div class="metric-num">2003</div><div class="metric-label">Founded in Halifax,<br>Nova Scotia</div></div>
+    <div class="metric-cell"><div class="metric-num">200+</div><div class="metric-label">Vertical industry<br>editions</div></div>
+    <div class="metric-cell"><div class="metric-num">Zero</div><div class="metric-label">US CLOUD Act<br>exposure</div></div>
+    <div class="metric-cell"><div class="metric-num">100%</div><div class="metric-label">Canadian bare-metal<br>hosting</div></div>
+  </div>
+</div>
+
+<!-- ══ WHY CANADA ══ -->
+<section class="why-canada" aria-label="Why Canadian data sovereignty matters">
+  <div class="container">
+    <div class="why-head-row">
+      <span class="section-eyebrow-light">Why Canadian data sovereignty matters</span>
+      <h2>Your data stays in Canada —<br><em>not just your servers.</em></h2>
+      <p>AWS, Azure, and Google Cloud all have Canadian data centres. None of them have Canadian corporate ownership. That distinction decides who can legally compel access to your data.</p>
+    </div>
+    <div class="why-two-col">
+      <div class="why-cards">
+        <div class="why-card"><h3>PIPEDA — Federal Privacy Law</h3><p>Compliant at the architecture level. Every client interaction stays within Canadian legal jurisdiction.</p></div>
+        <div class="why-card"><h3>Québec Law 25</h3><p>Penalties up to CA$25M or 4% of revenue. Salesboom's sovereign architecture satisfies privacy impact assessments by design — no contractual workaround required.</p></div>
+        <div class="why-card"><h3>BC FIPPA &amp; Ontario PHIPA</h3><p>Required for government and healthcare contracts. Satisfied by actual hosting structure, not a contract addendum.</p></div>
+        <div class="why-card"><h3>Anti-Tariff Stability</h3><p>No US licensing exposure. Fixed CAD pricing. No cross-border SaaS currency risk or trade policy uncertainty.</p></div>
+        <a href="#" class="why-link">Read: CLOUD Act explained for Canadian enterprises →</a>
+      </div>
+      <div class="compare-table-wrap">
+        <table class="compare-table" aria-label="Salesboom vs US CRM vendors">
+          <thead>
+            <tr>
+              <th scope="col" style="width:50%">Capability</th>
+              <th scope="col" class="th-salesboom">Salesboom</th>
+              <th scope="col">Salesforce</th>
+              <th scope="col">HubSpot</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-hl"><td class="feature">Canadian-owned and operated</td><td class="yes" aria-label="Yes">✓</td><td class="no" aria-label="No">✗</td><td class="no" aria-label="No">✗</td></tr>
+            <tr class="row-hl"><td class="feature">No US CLOUD Act exposure</td><td class="yes" aria-label="Yes">✓</td><td class="no" aria-label="No">✗</td><td class="no" aria-label="No">✗</td></tr>
+            <tr><td class="feature">Pricing in CAD</td><td class="yes" aria-label="Yes">✓</td><td class="no" aria-label="No">✗</td><td class="no" aria-label="No">✗</td></tr>
+            <tr><td class="feature">23+ years enterprise CRM</td><td class="yes" aria-label="Yes">✓</td><td class="yes" aria-label="Yes">✓</td><td class="no" aria-label="No">✗</td></tr>
+            <tr><td class="feature">A2A + MCP native infrastructure</td><td class="yes" aria-label="Yes">✓</td><td class="no" aria-label="No">✗</td><td class="no" aria-label="No">✗</td></tr>
+            <tr><td class="feature">People as a Service delivery</td><td class="yes" aria-label="Yes">✓</td><td class="no" aria-label="No">✗</td><td class="no" aria-label="No">✗</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STACK ══ -->
+<section class="stack-section">
+  <div class="container">
+    <span class="section-eyebrow">The Canadian Enterprise Stack</span>
+    <h2>Built for enterprise.<br><em>Delivered as a platform.</em></h2>
+    <p class="section-intro">Ten pillars of enterprise capability — CRM, RevOps, data management, integrations, AI agents, and Canadian infrastructure — in one sovereign architecture.</p>
+    <div class="stack-grid">
+      <div class="stack-card"><span class="stack-pill">Revenue Engine</span><h3>CRM + GTM + RevOps</h3><p>Full attribution from first touch to closed deal. Works headless alongside Salesforce, HubSpot, or any existing stack.</p></div>
+      <div class="stack-card"><span class="stack-pill">Integration Station</span><h3>Your integration control panel</h3><p>MCP, A2A, REST, SDK — all integrations managed in one place. Native connectors for Sage, NetSuite, SAP, Epicor, QuickBooks, and 50+ more.</p></div>
+      <div class="stack-card"><span class="stack-pill">Data Engine</span><h3>MDM + deduplication + audit trail</h3><p>AI-first master data management with full roll-back. Agents reconcile every data point across your ERP, CRM, and marketing stack.</p></div>
+      <div class="stack-card"><span class="stack-pill">AMS — Agent Management System</span><h3>Autonomous agents at enterprise scale</h3><p>Sourcing agents vet and route leads, employees, and skills against department ICPs — 24/7, with human-in-the-loop governance.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="services-section">
+  <div class="container">
+    <span class="section-eyebrow">Implementation Services</span>
+    <h2>Bridging the<br><em>implementation gap.</em></h2>
+    <p class="section-intro">Three delivery models — from rapid onboarding to fully custom builds to embedded fractional talent.</p>
+    <ol class="services-grid">
+      <li class="service-card"><div class="svc-num" aria-hidden="true">01</div><span class="svc-tag svc-tag-blue">Fast Track</span><h3>Live in Days</h3><p>Accelerated onboarding pre-configured for your vertical. Purpose-built paths for construction, healthcare, government, and 200+ industries.</p><a href="#" class="service-link">See Fast Track options →</a></li>
+      <li class="service-card"><div class="svc-num" aria-hidden="true">02</div><span class="svc-tag svc-tag-orange">Built to Suit</span><h3>Adapts to You</h3><p>Custom implementation built around your workflows. Your business is the specification, not the variable. Done this way since 2003.</p><a href="#" class="service-link">Explore Built to Suit →</a></li>
+      <li class="service-card"><div class="svc-num" aria-hidden="true">03</div><span class="svc-tag svc-tag-green">People as a Service</span><h3>Not Just Sales</h3><p>Fractional Canadian talent embedded in your team: developers, architects, marketers, ops, data analysts.</p><a href="#" class="service-link">Build your team →</a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="faq-section" aria-label="Frequently asked questions">
+  <div class="container">
+    <span class="section-eyebrow">Common questions</span>
+    <h2>What enterprises ask<br><em>before they switch.</em></h2>
+    <p class="faq-intro">Answers visible to all visitors and AI search engines regardless of accordion state.</p>
+    <div class="faq-list">
+      <div class="faq-item"><details><summary><span class="faq-q">What is the CLOUD Act and why does it matter for Canadian enterprise data?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">The US Clarifying Lawful Overseas Use of Data (CLOUD Act) allows US law enforcement to compel American companies to produce customer data held anywhere in the world — including on servers located in Canada. If your CRM or cloud software vendor has a US parent company, your Canadian enterprise data can be accessed by US authorities without a Canadian warrant. <strong>Salesboom is Canadian and has no US parent entity.</strong> Your data is governed exclusively by Canadian law and is not subject to CLOUD Act compulsion.</p></details></div>
+      <div class="faq-item"><details><summary><span class="faq-q">What is the difference between data residency and data sovereignty?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a"><strong>Data residency</strong> means your data is physically stored in a specific country. <strong>Data sovereignty</strong> means it is governed by that country's laws and cannot be compelled by a foreign government. AWS Canada, Azure Canada, and Google Cloud Canada offer data residency — but because their parent companies are US corporations, they cannot offer true sovereignty. Salesboom offers both: Canadian servers and Canadian corporate ownership.</p></details></div>
+      <div class="faq-item"><details><summary><span class="faq-q">Can we keep our existing CRM and still use Salesboom?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">Yes. Salesboom runs headless as "A CRM for your CRM." The Revenue Engine, Integration Station, and Data Engine connect to Salesforce, HubSpot, Microsoft Dynamics, Pipedrive, and most major platforms via API, MCP, and A2A. You can add Canadian sovereignty, agentic AI infrastructure, and RevOps capability without replacing your existing system.</p></details></div>
+      <div class="faq-item"><details><summary><span class="faq-q">What is the Canadian Enterprise Stack?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">The Canadian Enterprise Stack is Salesboom's ten-pillar enterprise platform: <strong>Revenue Engine</strong> (CRM + GTM + RevOps), <strong>Integration Station</strong> (middleware OS), <strong>Data Engine</strong> (MDM), <strong>AMS</strong> (Agent Management System), <strong>Demandinator</strong> (demand generation), <strong>Promptuit</strong> (prompt management), <strong>Content Relationship Management</strong>, <strong>Context Engine</strong>, plus Fast Track, Built to Suit, and People as a Service. Each pillar deploys independently or as an integrated system, hosted on 100% Canadian bare-metal infrastructure.</p></details></div>
+      <div class="faq-item"><details><summary><span class="faq-q">What is People as a Service?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">People as a Service is Salesboom's fractional talent delivery model. Rather than selling software alone, Salesboom provides dedicated Canadian professionals — developers, system architects, marketers, data analysts, operations specialists, and CRM concierge teams — embedded in your organization for the engagement. This is not Sales as a Service; it is a full cross-functional capability.</p></details></div>
+      <div class="faq-item"><details><summary><span class="faq-q">What is A2A and how does Salesboom use it?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">Agent-to-Agent (A2A) is an integration protocol that allows AI agents to communicate directly with each other and with third-party software without a human logging in. Salesboom's AMS deploys A2A-enabled sourcing agents that find, vet, and add leads, opportunities, employees, contractors, skills, and other agents to your CRM. <strong>Salesboom is Canada's first CRM with published A2A capability.</strong></p></details></div>
+    </div>
+  </div>
+</section>

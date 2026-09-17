@@ -1,0 +1,464 @@
+---
+layout: default
+title: "Brand Guide — Salesboom.ca Design System"
+description: "The Salesboom.ca brand system: colour tokens, typography scale, component patterns, and a .com vs .ca comparison. Prepared by Northlight Advisory Services."
+permalink: /brand-guide/
+---
+
+<style>
+/* ─── Brand Guide layout ─────────────────────────────────────── */
+.bg-hero { background: var(--navy); padding: 48px 0 40px; }
+.bg-hero .container { max-width: 820px; }
+.bg-eyebrow { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.40); margin-bottom: 12px; }
+.bg-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(24px, 3.5vw, 36px); font-weight: 700; color: #fff; line-height: 1.2; text-wrap: balance; }
+.bg-hero h1 em { font-style: italic; font-weight: 300; color: #5080C8; }
+
+.bg-body { max-width: 820px; margin: 0 auto; padding: 48px 24px 72px; }
+
+.bg-section { margin-bottom: 52px; }
+.bg-section h2 { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.2; }
+.bg-section h2 em { font-style: italic; font-weight: 300; color: var(--blue); }
+.bg-section > p { font-size: 14.5px; color: var(--text-2); line-height: 1.68; margin-bottom: 20px; }
+.section-rule { border: none; border-top: 1px solid var(--border); margin: 52px 0 0; }
+
+/* ─── Colour swatches ─────────────────────────────────────── */
+.swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+.swatch { border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+.swatch-chip { height: 56px; }
+.swatch-info { padding: 8px 10px; background: var(--card); }
+.swatch-name { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+.swatch-hex  { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.swatch-role { font-size: 11.5px; color: var(--text-2); line-height: 1.4; }
+
+/* ─── Contrast table ─────────────────────────────────────── */
+.contrast-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 16px; }
+.contrast-table th { text-align: left; padding: 8px 10px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); }
+.contrast-table td { padding: 10px 10px; vertical-align: middle; border-bottom: 1px solid var(--border); }
+.contrast-table tr:last-child td { border-bottom: none; }
+.ct-sample { display: inline-block; padding: 3px 10px; border-radius: 3px; font-size: 13px; font-weight: 500; }
+.badge-pass { background: #D1FAE5; color: #065F46; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+.badge-fail { background: #FEE2E2; color: #991B1B; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+.badge-warn { background: #FEF3C7; color: #92400E; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .badge-pass { background: #064E3B; color: #6EE7B7; }
+  :root:not([data-theme="light"]) .badge-fail { background: #7F1D1D; color: #FCA5A5; }
+  :root:not([data-theme="light"]) .badge-warn { background: #78350F; color: #FCD34D; }
+}
+
+/* ─── Type specimens ─────────────────────────────────────── */
+.type-stack { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+.type-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline; padding: 14px 18px; border-bottom: 1px solid var(--border); background: var(--card); }
+.type-row:last-child { border-bottom: none; }
+.type-specimen { color: var(--text); }
+.type-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex-shrink: 0; }
+.type-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.type-badge { align-self: flex-end; }
+
+/* ─── Component specimens ─────────────────────────────────────── */
+.component-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+.component-row { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 20px 24px; }
+.component-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+
+/* live button examples */
+.btn-primary { background: #00783C; color: #fff; padding: 10px 20px; border-radius: 3px; border: none; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; cursor: default; letter-spacing: .01em; }
+.btn-outline  { background: transparent; color: #003C78; border: 1.5px solid #003C78; padding: 10px 20px; border-radius: 3px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; cursor: default; letter-spacing: .01em; display: inline-block; }
+.btn-ghost    { background: transparent; color: rgba(255,255,255,.82); border: 1.5px solid rgba(255,255,255,.30); padding: 10px 20px; border-radius: 3px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; cursor: default; letter-spacing: .01em; display: inline-block; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.btn-row-dark { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: #001E3C; padding: 16px; border-radius: 3px; margin-top: 10px; }
+
+/* card accent */
+.demo-card { border: 1px solid #D4DCE8; border-top: 3px solid #003C78; border-radius: 4px; padding: 18px 20px; max-width: 280px; background: #fff; }
+.demo-card-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #5A6E8A; margin-bottom: 8px; }
+.demo-card-title { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: #0D1C2E; margin-bottom: 6px; line-height: 1.3; }
+.demo-card-body { font-size: 13px; color: #3A4F68; line-height: 1.5; }
+
+/* pill labels */
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 100px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+.pill-blue { background: rgba(0,60,120,.08); color: #003C78; border: 1px solid rgba(0,60,120,.18); }
+.pill-orange { background: rgba(240,90,0,.08); color: #C24800; border: 1px solid rgba(240,90,0,.18); }
+.pill-green { background: rgba(0,120,60,.08); color: #00783C; border: 1px solid rgba(0,120,60,.18); }
+
+/* ─── .com vs .ca comparison ─────────────────────────────────── */
+.compare { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 16px; }
+.compare thead th { text-align: left; padding: 10px 14px; background: var(--bg-alt); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--border); }
+.compare thead th:first-child { width: 24%; }
+.compare tbody td { padding: 11px 14px; vertical-align: top; border-bottom: 1px solid var(--border); line-height: 1.55; color: var(--text-2); }
+.compare tbody td:first-child { font-weight: 600; color: var(--text); font-size: 13px; }
+.compare tbody tr:last-child td { border-bottom: none; }
+.compare .col-com { color: #B45309; }
+.compare .col-ca  { color: #065F46; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .compare .col-com { color: #FCD34D; }
+  :root:not([data-theme="light"]) .compare .col-ca  { color: #6EE7B7; }
+}
+
+@media (max-width: 600px) {
+  .swatch-grid { grid-template-columns: repeat(2, 1fr); }
+  .compare thead th:nth-child(2), .compare tbody td:nth-child(2) { display: none; }
+}
+</style>
+
+<div class="bg-hero">
+  <div class="container">
+    <div class="bg-eyebrow">Northlight Advisory Services · Design Reference</div>
+    <h1>Salesboom.ca <em>brand guide</em></h1>
+  </div>
+</div>
+
+<div class="bg-body">
+
+  <!-- COLOUR PALETTE -->
+  <div class="bg-section">
+    <h2>Colour <em>palette</em></h2>
+    <p>Four brand colours, each with a single semantic role. The role rules are strict — orange never appears on CTAs, green never appears in structure, blue never appears as an accent in running text.</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#003C78;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">--blue</div>
+          <div class="swatch-hex">#003C78</div>
+          <div class="swatch-role">Structure — nav, borders, card tops, links</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F05A00;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">--orange</div>
+          <div class="swatch-hex">#F05A00</div>
+          <div class="swatch-role">Accent — headline italics &amp; proof scores only</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#00783C;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">--green</div>
+          <div class="swatch-hex">#00783C</div>
+          <div class="swatch-role">CTA — all action buttons ("Start Free")</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#001E3C;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">--navy</div>
+          <div class="swatch-hex">#001E3C</div>
+          <div class="swatch-role">Dark ground — footer &amp; dark section backgrounds</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#5080C8;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">--blue-light</div>
+          <div class="swatch-hex">#5080C8</div>
+          <div class="swatch-role">Eyebrows &amp; italic text on dark backgrounds only</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#0D1C2E;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">--text</div>
+          <div class="swatch-hex">#0D1C2E</div>
+          <div class="swatch-role">Primary text on light backgrounds</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#3A4F68;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">--text-2</div>
+          <div class="swatch-hex">#3A4F68</div>
+          <div class="swatch-role">Secondary / body text (14px+)</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#F3F5F9; border:1px solid #D4DCE8;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">--bg-alt</div>
+          <div class="swatch-hex">#F3F5F9</div>
+          <div class="swatch-role">Alternate section background</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- CONTRAST TABLE -->
+  <div class="bg-section" style="margin-top:52px;">
+    <h2>Contrast <em>verification</em></h2>
+    <p>All foreground/background pairings used in the proposed design, verified against WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large text ≥18px or bold ≥14px).</p>
+    <table class="contrast-table">
+      <thead>
+        <tr>
+          <th scope="col">Pairing</th>
+          <th scope="col">Ratio</th>
+          <th scope="col">Context</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ct-sample" style="background:#fff;color:#0D1C2E;">#0D1C2E on white</span></td>
+          <td>17.9:1</td>
+          <td>Body text, headings</td>
+          <td><span class="badge-pass">Pass AA</span></td>
+        </tr>
+        <tr>
+          <td><span class="ct-sample" style="background:#F3F5F9;color:#3A4F68;">#3A4F68 on #F3F5F9</span></td>
+          <td>5.0:1</td>
+          <td>Body text on alt bg (14px+)</td>
+          <td><span class="badge-pass">Pass AA</span></td>
+        </tr>
+        <tr>
+          <td><span class="ct-sample" style="background:#fff;color:#003C78;">#003C78 on white</span></td>
+          <td>9.4:1</td>
+          <td>Links, blue text</td>
+          <td><span class="badge-pass">Pass AA</span></td>
+        </tr>
+        <tr>
+          <td><span class="ct-sample" style="background:#00783C;color:#fff;">White on #00783C</span></td>
+          <td>5.1:1</td>
+          <td>CTA button text</td>
+          <td><span class="badge-pass">Pass AA</span></td>
+        </tr>
+        <tr>
+          <td><span class="ct-sample" style="background:#001E3C;color:rgba(255,255,255,.82);">rgba(.82) on navy</span></td>
+          <td>12.1:1</td>
+          <td>Footer primary text</td>
+          <td><span class="badge-pass">Pass AA</span></td>
+        </tr>
+        <tr>
+          <td><span class="ct-sample" style="background:#001E3C;color:rgba(255,255,255,.65);">rgba(.65) on navy</span></td>
+          <td>7.3:1</td>
+          <td>Footer column headings (h4)</td>
+          <td><span class="badge-pass">Pass AA</span></td>
+        </tr>
+        <tr>
+          <td><span class="ct-sample" style="background:#001E3C;color:rgba(255,255,255,.55);">rgba(.55) on navy</span></td>
+          <td>5.7:1</td>
+          <td>Footer tagline text</td>
+          <td><span class="badge-pass">Pass AA</span></td>
+        </tr>
+        <tr>
+          <td><span class="ct-sample" style="background:#001E3C;color:rgba(255,255,255,.50);">rgba(.50) on navy</span></td>
+          <td>5.0:1</td>
+          <td>Footer body copy, legal links</td>
+          <td><span class="badge-pass">Pass AA</span></td>
+        </tr>
+        <tr>
+          <td><span class="ct-sample" style="background:#fff;color:#F05A00;">#F05A00 on white</span></td>
+          <td>3.5:1</td>
+          <td>Headline italics (≥24px Fraunces)</td>
+          <td><span class="badge-pass">Pass (large text)</span></td>
+        </tr>
+        <tr>
+          <td><span class="ct-sample" style="background:#F3F5F9;color:#5A6E8A;">#5A6E8A on #F3F5F9 (13px)</span></td>
+          <td>3.6:1</td>
+          <td>Small muted labels — <strong>avoid at 13px</strong></td>
+          <td><span class="badge-fail">Fails AA (normal)</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;font-size:13px;"><strong>Rule:</strong> Never use <code style="font-size:12px;">--muted (#5A6E8A)</code> for text below 18px on <code style="font-size:12px;">--bg-alt</code>. Use <code style="font-size:12px;">--text-2</code> instead.</p>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- TYPOGRAPHY -->
+  <div class="bg-section" style="margin-top:52px;">
+    <h2>Typography <em>scale</em></h2>
+    <p>Three typefaces with strict role assignments. Every size in the scale passes WCAG 2.1 AA on both white and <code style="font-size:12px;">#F3F5F9</code> backgrounds.</p>
+    <div class="type-stack">
+      <div class="type-row">
+        <div class="type-specimen" style="font-family:'Fraunces',serif;font-size:40px;font-weight:700;line-height:1.1;color:#0D1C2E;">Hero headline</div>
+        <div class="type-meta"><span class="type-label">Fraunces 700 · 40px · h1</span><span class="type-badge badge-pass">Pass AA</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-specimen" style="font-family:'Fraunces',serif;font-size:40px;font-weight:300;font-style:italic;line-height:1.1;color:#F05A00;">italic accent</div>
+        <div class="type-meta"><span class="type-label">Fraunces 300i · 40px · orange</span><span class="type-badge badge-pass">Pass (large)</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-specimen" style="font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:#0D1C2E;">Section heading</div>
+        <div class="type-meta"><span class="type-label">Fraunces 700 · 28px · h2</span><span class="type-badge badge-pass">Pass AA</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-specimen" style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:#0D1C2E;">Card heading / sub-section</div>
+        <div class="type-meta"><span class="type-label">Fraunces 600 · 20px · h3</span><span class="type-badge badge-pass">Pass AA</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-specimen" style="font-family:'DM Sans',sans-serif;font-size:16px;color:#3A4F68;line-height:1.7;">Body copy — DM Sans, comfortable line length, readable at screen distance. Data sovereignty and CRM compliance for Canadian enterprise.</div>
+        <div class="type-meta"><span class="type-label">DM Sans 400 · 16px · body</span><span class="type-badge badge-pass">Pass AA</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-specimen" style="font-family:'DM Sans',sans-serif;font-size:14px;color:#3A4F68;line-height:1.65;">Secondary body / card copy — slightly smaller but still passes at this weight and colour.</div>
+        <div class="type-meta"><span class="type-label">DM Sans 400 · 14px · card body</span><span class="type-badge badge-pass">Pass AA</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-specimen" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A6E8A;font-weight:500;">SECTION EYEBROW · DM MONO</div>
+        <div class="type-meta"><span class="type-label">DM Mono 500 · 11px · label</span><span class="type-badge badge-warn">Min size — use 11px+</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-specimen" style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#003C78;font-weight:600;">METRIC VALUE LABEL</div>
+        <div class="type-meta"><span class="type-label">DM Mono 600 · 12px · metric</span><span class="type-badge badge-pass">Pass AA</span></div>
+      </div>
+    </div>
+    <p style="margin-top:14px;font-size:13.5px;"><strong>Font loading:</strong> Google Fonts — Fraunces (300, 300i, 700), DM Sans (400, 600), DM Mono (400, 500). Preconnect tags required. Never fallback to system-ui for Fraunces — the italic weight is core to the brand.</p>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- COMPONENTS -->
+  <div class="bg-section" style="margin-top:52px;">
+    <h2>Component <em>patterns</em></h2>
+    <p>The five recurring components in the Salesboom.ca design system. Each uses the same token set and passes WCAG AA.</p>
+    <div class="component-grid">
+
+      <div class="component-row">
+        <div class="component-label">Buttons</div>
+        <div class="btn-row">
+          <button class="btn-primary">Start Free Trial</button>
+          <a class="btn-outline" href="#">Book a Demo</a>
+        </div>
+        <div class="btn-row-dark">
+          <button class="btn-primary">Start Free Trial</button>
+          <a class="btn-ghost" href="#">Book a Demo</a>
+        </div>
+        <p style="font-size:13px;color:var(--text-2);margin-top:12px;line-height:1.5;">Green = all primary CTAs (never blue or orange). Blue outline = secondary actions on light backgrounds. Ghost (white border) = secondary on dark backgrounds. Never use an orange button.</p>
+      </div>
+
+      <div class="component-row">
+        <div class="component-label">Service / feature cards</div>
+        <div class="demo-card">
+          <div class="demo-card-tag">CRM Module</div>
+          <div class="demo-card-title">Sales Automation</div>
+          <div class="demo-card-body">Automate follow-ups, track pipeline stages, and close faster with built-in Canadian data residency.</div>
+        </div>
+        <p style="font-size:13px;color:var(--text-2);margin-top:12px;line-height:1.5;">Blue <code style="font-size:11.5px;">border-top: 3px solid #003C78</code>. White card background on light sections, #F3F5F9 card background on dark sections. No drop shadow unless hover state.</p>
+      </div>
+
+      <div class="component-row">
+        <div class="component-label">Pill labels / tags</div>
+        <div class="pill-row">
+          <span class="pill pill-blue">Enterprise CRM</span>
+          <span class="pill pill-blue">Canadian Hosted</span>
+          <span class="pill pill-orange">93 / 100</span>
+          <span class="pill pill-orange">4.7★ G2</span>
+          <span class="pill pill-green">Free Trial</span>
+        </div>
+        <p style="font-size:13px;color:var(--text-2);margin-top:12px;line-height:1.5;">Blue pills = feature/category labels. Orange pills = scores and ratings only (never for navigation or actions). Green pills = offer/CTA context only.</p>
+      </div>
+
+      <div class="component-row">
+        <div class="component-label">FAQ accordion (HTML)</div>
+        <details style="border:1px solid var(--border);border-radius:4px;overflow:hidden;max-width:560px;">
+          <summary style="padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--text);cursor:pointer;background:var(--bg-alt);list-style:none;display:flex;justify-content:space-between;align-items:center;">Is Salesboom.ca data stored in Canada? <span style="color:var(--muted);font-weight:400;">▾</span></summary>
+          <div style="padding:14px 18px 16px;font-size:14.5px;color:var(--text-2);line-height:1.65;">Yes. All Salesboom.ca customer data is stored exclusively on servers located in Canada, ensuring compliance with Canadian privacy law and immunity from the US CLOUD Act.</div>
+        </details>
+        <p style="font-size:13px;color:var(--text-2);margin-top:12px;line-height:1.5;">Native <code style="font-size:11.5px;">&lt;details&gt;</code>/<code style="font-size:11.5px;">&lt;summary&gt;</code> — no JavaScript. Keyboard accessible. <code style="font-size:11.5px;">:focus-visible</code> ring required on <code style="font-size:11.5px;">summary</code>. Pairs with FAQPage JSON-LD schema.</p>
+      </div>
+
+      <div class="component-row">
+        <div class="component-label">At-a-glance / citability block</div>
+        <div style="background:var(--bg-alt);border:1px solid var(--border);border-left:3px solid #003C78;border-radius:0 4px 4px 0;padding:14px 18px;max-width:560px;">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#003C78;margin-bottom:10px;">At a glance</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;">
+            <li style="font-size:14px;color:var(--text-2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#003C78;">→</span> Salesboom has been a Canadian-owned enterprise CRM since 2003.</li>
+            <li style="font-size:14px;color:var(--text-2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#003C78;">→</span> All customer data is stored in Canada, outside CLOUD Act jurisdiction.</li>
+            <li style="font-size:14px;color:var(--text-2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#003C78;">→</span> Used by 7,000+ organisations across 169 countries.</li>
+          </ul>
+        </div>
+        <p style="font-size:13px;color:var(--text-2);margin-top:12px;line-height:1.5;">Required on every page — first content block after the hero. Blue left border (<code style="font-size:11.5px;">--blue</code>). 3–5 bullet facts. This is the primary GEO citability signal.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- .COM vs .CA COMPARISON -->
+  <div class="bg-section" style="margin-top:52px;">
+    <h2>salesboom.com <em>vs</em> salesboom.ca</h2>
+    <p>What changed in the proposed design and why. Every change is documented here so it can be referenced in the proposal or implemented by a developer without ambiguity.</p>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th scope="col">Element</th>
+          <th scope="col" class="col-com">salesboom.com (current)</th>
+          <th scope="col" class="col-ca">salesboom.ca (proposed)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Body font</td>
+          <td class="col-com">Verdana/Tahoma, 11–12px</td>
+          <td class="col-ca">DM Sans, 16px minimum body</td>
+        </tr>
+        <tr>
+          <td>Display font</td>
+          <td class="col-com">Ubuntu/Titillium (newer layer), no structured hierarchy</td>
+          <td class="col-ca">Fraunces (serif display, 700 roman + 300 italic)</td>
+        </tr>
+        <tr>
+          <td>CTA button colour</td>
+          <td class="col-com">Orange (#FF5E00, #F6831D) — brand accent used for actions</td>
+          <td class="col-ca">Green (#00783C) — orange reserved for accents only</td>
+        </tr>
+        <tr>
+          <td>Primary blue</td>
+          <td class="col-com">#003f80, #0d4986 (multiple slightly different values)</td>
+          <td class="col-ca">#003C78 — single token, consistent across all usage</td>
+        </tr>
+        <tr>
+          <td>CSS architecture</td>
+          <td class="col-com">No CSS custom properties — all hardcoded hex values</td>
+          <td class="col-ca">Token-based system (--blue, --orange, --green, --navy)</td>
+        </tr>
+        <tr>
+          <td>Heading hierarchy</td>
+          <td class="col-com">No consistent semantic hierarchy; h3/h4 used inconsistently</td>
+          <td class="col-ca">Strict h1 → h2 → h3, no skips, WCAG 1.3.1 compliant</td>
+        </tr>
+        <tr>
+          <td>Keyboard navigation</td>
+          <td class="col-com">No visible focus states on interactive elements</td>
+          <td class="col-ca">:focus-visible rings on all a, button, summary, [tabindex]</td>
+        </tr>
+        <tr>
+          <td>FAQ structure</td>
+          <td class="col-com">No FAQ section</td>
+          <td class="col-ca">&lt;details&gt;/&lt;summary&gt; accordion + FAQPage JSON-LD schema</td>
+        </tr>
+        <tr>
+          <td>Structured data</td>
+          <td class="col-com">No JSON-LD of any kind</td>
+          <td class="col-ca">Organization + WebSite + WebPage + FAQPage @graph</td>
+        </tr>
+        <tr>
+          <td>Citability block</td>
+          <td class="col-com">No at-a-glance or summary structure</td>
+          <td class="col-ca">At-a-glance block on every page (primary GEO signal)</td>
+        </tr>
+        <tr>
+          <td>Services layout</td>
+          <td class="col-com">Visual grid, no semantic list markup</td>
+          <td class="col-ca">&lt;ol&gt; with &lt;li class="service-card"&gt; — ordered, scannable</td>
+        </tr>
+        <tr>
+          <td>CEO quote</td>
+          <td class="col-com">Styled text, no semantic markup</td>
+          <td class="col-ca">&lt;blockquote cite="…"&gt; with &lt;cite&gt; attribution</td>
+        </tr>
+        <tr>
+          <td>WCAG status</td>
+          <td class="col-com">Multiple AA failures (contrast, font size, heading skip, scope)</td>
+          <td class="col-ca">Passes WCAG 2.1 AA across all tested combinations</td>
+        </tr>
+        <tr>
+          <td>GEO score</td>
+          <td class="col-com">~37/100 (estimated)</td>
+          <td class="col-ca">87+ / 100 (deployed with schema)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

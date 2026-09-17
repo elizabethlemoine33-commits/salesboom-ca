@@ -1,0 +1,262 @@
+---
+layout: default
+title: "GEO Audit — salesboom.com Current Site"
+description: "Generative Engine Optimisation audit of salesboom.com against the Northlight GEO framework. Baseline score before the proposed redesign."
+permalink: /geo-before/
+---
+
+<style>
+.audit-hero { background: var(--navy); padding: 48px 0 40px; }
+.audit-hero .container { max-width: 820px; }
+.ah-eyebrow { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.40); margin-bottom: 12px; }
+.audit-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(22px, 3vw, 34px); font-weight: 700; color: #fff; line-height: 1.2; text-wrap: balance; }
+.audit-hero h1 em { font-style: italic; font-weight: 300; color: #FF7A3D; }
+.audit-hero p { font-size: 15px; color: rgba(255,255,255,.65); line-height: 1.65; margin-top: 12px; max-width: 580px; }
+
+.audit-body { max-width: 820px; margin: 0 auto; padding: 48px 24px 72px; }
+
+/* score summary */
+.score-summary { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 28px 28px; margin-bottom: 40px; }
+.score-big { font-family: 'Fraunces', serif; font-size: 72px; font-weight: 700; line-height: 1; color: #DC2626; }
+.score-detail h2 { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.score-detail p { font-size: 14px; color: var(--text-2); line-height: 1.65; margin: 0; }
+.score-note { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 6px; display: block; }
+
+/* dimension scorecards */
+.dim-grid { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+.dim-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 20px 22px; }
+.dim-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+.dim-title { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--text); }
+.dim-weight { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.dim-score-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.dim-score-num { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 700; min-width: 56px; }
+.dim-bar-track { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.dim-bar-fill { height: 100%; border-radius: 4px; }
+.score-low  { color: #DC2626; } .bar-low  { background: #DC2626; }
+.score-mid  { color: #D97706; } .bar-mid  { background: #D97706; }
+.score-high { color: #059669; } .bar-high { background: #059669; }
+.dim-findings { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.dim-findings li { font-size: 13.5px; color: var(--text-2); line-height: 1.55; padding-left: 18px; position: relative; }
+.dim-findings li::before { content: '→'; position: absolute; left: 0; color: var(--muted); font-size: 11px; top: 3px; }
+.fi-fail::before { color: #DC2626 !important; content: '✕' !important; font-size: 12px !important; top: 2px !important; }
+.fi-warn::before { color: #D97706 !important; content: '!' !important; font-size: 12px !important; font-weight: 700 !important; top: 1px !important; }
+.fi-pass::before { color: #059669 !important; content: '✓' !important; font-size: 11px !important; top: 2px !important; }
+
+/* comparison strip */
+.compare-strip { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 24px 28px; margin-bottom: 40px; }
+.compare-strip h3 { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+.cs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; }
+.cs-block { padding: 16px; border-radius: 4px; border: 1px solid var(--border); background: var(--card); }
+.cs-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.cs-score { font-family: 'Fraunces', serif; font-size: 38px; font-weight: 700; line-height: 1; }
+.cs-score.low  { color: #DC2626; }
+.cs-score.high { color: #059669; }
+.cs-desc { font-size: 12.5px; color: var(--text-2); margin-top: 4px; line-height: 1.4; }
+.cs-arrow { text-align: center; font-size: 22px; color: var(--muted); }
+.cs-gain { font-size: 13px; color: var(--text-2); padding: 10px 0; text-align: center; grid-column: 1 / -1; border-top: 1px solid var(--border); margin-top: 8px; }
+
+/* key findings table */
+.findings-section h2 { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+.finding-cards { display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px; }
+.fc { padding: 14px 18px; border-radius: 4px; border-left: 3px solid; }
+.fc-crit { background: rgba(220,38,38,.06); border-color: #DC2626; }
+.fc-warn { background: rgba(217,119,6,.06); border-color: #D97706; }
+.fc-opp  { background: rgba(0,60,120,.04); border-color: var(--blue); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .fc-crit { background: rgba(220,38,38,.12); }
+  :root:not([data-theme="light"]) .fc-warn { background: rgba(217,119,6,.12); }
+  :root:not([data-theme="light"]) .fc-opp  { background: rgba(0,60,120,.12); }
+}
+.fc-head { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; margin-bottom: 5px; }
+.fc-crit .fc-head { color: #DC2626; }
+.fc-warn .fc-head { color: #D97706; }
+.fc-opp  .fc-head { color: var(--blue); }
+.fc-body { font-size: 13.5px; color: var(--text); line-height: 1.58; }
+
+/* methodology */
+.method-note { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 4px; padding: 20px 24px; margin-top: 40px; }
+.method-note h3 { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.method-note p { font-size: 13.5px; color: var(--text-2); line-height: 1.65; margin: 0 0 8px; }
+.method-note p:last-child { margin-bottom: 0; }
+
+@media (max-width: 560px) {
+  .score-summary { grid-template-columns: 1fr; }
+  .cs-grid { grid-template-columns: 1fr; }
+  .cs-arrow { transform: rotate(90deg); }
+}
+</style>
+
+<div class="audit-hero">
+  <div class="container">
+    <div class="ah-eyebrow">GEO Audit · Baseline · Northlight Advisory Services</div>
+    <h1>salesboom.com<br><em>before the redesign</em></h1>
+    <p>The current salesboom.com, scored against the Northlight GEO framework — the same 5-dimension scoring used on the proposed salesboom.ca redesign. This is the baseline that the proposed redesign improves on.</p>
+  </div>
+</div>
+
+<div class="audit-body">
+
+  <!-- OVERALL SCORE -->
+  <div class="score-summary">
+    <div class="score-big">37</div>
+    <div class="score-detail">
+      <h2>Overall GEO score — salesboom.com</h2>
+      <p>The current site performs well on brand authority (a long track record, a recognisable name) but loses most of its score to absent schema markup, inaccessible text sizes, and no citability structure. AI engines can reach the site but cannot reliably extract, cite, or quote it.</p>
+      <span class="score-note">Scored September 2026 · Northlight GEO framework v1 · 5-dimension weighted model</span>
+    </div>
+  </div>
+
+  <!-- DIMENSION SCORES -->
+  <div class="dim-grid">
+
+    <div class="dim-card">
+      <div class="dim-header">
+        <span class="dim-title">Crawler Accessibility</span>
+        <span class="dim-weight">Weight: 25% · Raw: 14/25</span>
+      </div>
+      <div class="dim-score-row">
+        <span class="dim-score-num score-mid">14 / 25</span>
+        <div class="dim-bar-track"><div class="dim-bar-fill bar-mid" style="width:56%;"></div></div>
+      </div>
+      <ul class="dim-findings">
+        <li class="fi-fail">Body text at 11–12px — below 16px minimum for reliable text extraction by crawlers and AI indexers</li>
+        <li class="fi-fail">JavaScript-dependent content sections — some page text not present in initial HTML response</li>
+        <li class="fi-warn">Table-based layout in product sections — structural tables parsed as data by screen readers and AI crawlers</li>
+        <li class="fi-pass">Pages are indexable and return 200 status codes</li>
+        <li class="fi-pass">Core content (headlines, nav) is present in source HTML</li>
+      </ul>
+    </div>
+
+    <div class="dim-card">
+      <div class="dim-header">
+        <span class="dim-title">Citability Signals</span>
+        <span class="dim-weight">Weight: 25% · Raw: 8/25</span>
+      </div>
+      <div class="dim-score-row">
+        <span class="dim-score-num score-low">8 / 25</span>
+        <div class="dim-bar-track"><div class="dim-bar-fill bar-low" style="width:32%;"></div></div>
+      </div>
+      <ul class="dim-findings">
+        <li class="fi-fail">No FAQ section — AI engines have no Q&amp;A content to extract and cite</li>
+        <li class="fi-fail">No at-a-glance summary block — no skimmable facts for AI to surface in featured snippets</li>
+        <li class="fi-fail">No comparison tables with semantic markup — competitor comparisons exist visually but are not in table markup</li>
+        <li class="fi-fail">No definition blocks for key terms (CLOUD Act, data sovereignty, A2A integration)</li>
+        <li class="fi-warn">CEO quotes exist but are styled text, not &lt;blockquote&gt; markup</li>
+        <li class="fi-pass">Unique product names (Salesboom, A2A) appear consistently throughout text</li>
+      </ul>
+    </div>
+
+    <div class="dim-card">
+      <div class="dim-header">
+        <span class="dim-title">Technical SEO</span>
+        <span class="dim-weight">Weight: 20% · Raw: 10/20</span>
+      </div>
+      <div class="dim-score-row">
+        <span class="dim-score-num score-mid">10 / 20</span>
+        <div class="dim-bar-track"><div class="dim-bar-fill bar-mid" style="width:50%;"></div></div>
+      </div>
+      <ul class="dim-findings">
+        <li class="fi-fail">Heading hierarchy inconsistent — h3/h4 used for section content that should be h2, skip patterns present</li>
+        <li class="fi-warn">Meta descriptions generic or missing on interior pages</li>
+        <li class="fi-warn">No Open Graph tags — shared links show no preview image or description</li>
+        <li class="fi-pass">Title tags present on main pages</li>
+        <li class="fi-pass">Canonical URLs generally correct</li>
+        <li class="fi-pass">HTTPS with valid certificate</li>
+      </ul>
+    </div>
+
+    <div class="dim-card">
+      <div class="dim-header">
+        <span class="dim-title">Schema Markup</span>
+        <span class="dim-weight">Weight: 15% · Raw: 0/15</span>
+      </div>
+      <div class="dim-score-row">
+        <span class="dim-score-num score-low">0 / 15</span>
+        <div class="dim-bar-track"><div class="dim-bar-fill bar-low" style="width:0%;"></div></div>
+      </div>
+      <ul class="dim-findings">
+        <li class="fi-fail">No Organization schema — AI engines have no machine-readable company entity</li>
+        <li class="fi-fail">No WebSite or WebPage schema</li>
+        <li class="fi-fail">No FAQPage schema — FAQ content doesn't exist yet anyway</li>
+        <li class="fi-fail">No JSON-LD of any kind present in page source</li>
+        <li class="fi-fail">No structured data at all — this is the single largest scoring gap</li>
+      </ul>
+    </div>
+
+    <div class="dim-card">
+      <div class="dim-header">
+        <span class="dim-title">Brand Authority</span>
+        <span class="dim-weight">Weight: 15% · Raw: 5/15</span>
+      </div>
+      <div class="dim-score-row">
+        <span class="dim-score-num score-mid">5 / 15</span>
+        <div class="dim-bar-track"><div class="dim-bar-fill bar-mid" style="width:33%;"></div></div>
+      </div>
+      <ul class="dim-findings">
+        <li class="fi-pass">Salesboom brand name present and consistent</li>
+        <li class="fi-pass">Founding claim visible (CRM since 2003 / 20+ years)</li>
+        <li class="fi-fail">Founding year not consistently cited in a machine-readable form (no schema, no structured stat)</li>
+        <li class="fi-fail">Halifax, NS headquarters not cited on homepage</li>
+        <li class="fi-fail">No CEO attribution with structured markup (just styled text)</li>
+        <li class="fi-warn">G2 and Capterra review badges present but not linked to verified review sources in a crawlable way</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- COMPARISON STRIP -->
+  <div class="compare-strip">
+    <h3>Before / After: the GEO gap</h3>
+    <div class="cs-grid">
+      <div class="cs-block">
+        <div class="cs-label">salesboom.com · current</div>
+        <div class="cs-score low">37</div>
+        <div class="cs-desc">Crawler-accessible, weak citability, no schema, inconsistent heading hierarchy</div>
+      </div>
+      <div class="cs-arrow">→</div>
+      <div class="cs-block">
+        <div class="cs-label">salesboom.ca · proposed</div>
+        <div class="cs-score high">87+</div>
+        <div class="cs-desc">Full schema, at-a-glance block, FAQ section, semantic structure, WCAG AA</div>
+      </div>
+    </div>
+    <div class="cs-gain">A 50-point improvement — driven almost entirely by schema (0→14), citability structure (8→23), and accessible text (14→22). The brand authority story was already strong; the proposed design just gives it the markup to match.</div>
+  </div>
+
+  <!-- KEY FINDINGS -->
+  <div class="findings-section">
+    <h2>Key findings</h2>
+    <div class="finding-cards">
+      <div class="fc fc-crit">
+        <div class="fc-head">Critical — Schema markup entirely absent</div>
+        <div class="fc-body">No JSON-LD of any kind on salesboom.com. This is the single most impactful gap: an AI engine that encounters a query about "Canadian enterprise CRM" or "CLOUD Act data sovereignty software" has no machine-readable entity to attach to salesboom.com. The content exists — the company facts, the founding year, the product portfolio — but none of it is marked up. Zero out of 15 points in this dimension.</div>
+      </div>
+      <div class="fc fc-crit">
+        <div class="fc-head">Critical — No FAQ or citability structure</div>
+        <div class="fc-body">AI search engines (Google AI Overviews, Perplexity, Bing Copilot) cite pages that answer questions. Salesboom.com has no FAQ section, no at-a-glance summary, no comparison tables with semantic markup. The site cannot be cited by an AI engine for specific questions — the content isn't structured as answers.</div>
+      </div>
+      <div class="fc fc-warn">
+        <div class="fc-head">Warning — Text sizes below crawlable threshold</div>
+        <div class="fc-body">Body text at 11–12px is below the 16px threshold used by accessibility standards and increasingly used by AI crawlers to filter "real" content from decorative text. Small-text content may be deprioritised or ignored during extraction.</div>
+      </div>
+      <div class="fc fc-warn">
+        <div class="fc-head">Warning — Heading hierarchy inconsistencies</div>
+        <div class="fc-body">Section headings jump levels (h2 → h4) in product and why-choose sections. Both screen readers and AI engines use heading structure to understand page organisation. Heading skips signal structural noise and reduce confidence in the page's information hierarchy.</div>
+      </div>
+      <div class="fc fc-opp">
+        <div class="fc-head">Opportunity — The differentiation story is ready to be marked up</div>
+        <div class="fc-body">The CLOUD Act / Canadian data sovereignty narrative is genuinely differentiated and, if marked up correctly, is exactly the content that AI engines will cite for high-intent Canadian enterprise queries. All the facts are present — founding year, company location, product claims, customer numbers. None of it requires new content; it requires new markup.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- METHODOLOGY NOTE -->
+  <div class="method-note">
+    <h3>About this audit</h3>
+    <p>This audit applies the Northlight GEO framework — a 5-dimension weighted scoring model developed for evaluating how well a website performs with AI-powered search engines (Google AI Overviews, Bing Copilot, Perplexity, ChatGPT Search).</p>
+    <p>The five dimensions and their weights are: Crawler Accessibility (25%), Citability Signals (25%), Technical SEO (20%), Schema Markup (15%), Brand Authority (15%). Each dimension is scored on its weighted contribution to 100 total points.</p>
+    <p>The baseline score of 37/100 is an estimated score based on manual review of the salesboom.com source and rendered HTML. It is not derived from a machine crawler. The methodology is the same framework applied to the proposed salesboom.ca redesign, enabling a direct before/after comparison.</p>
+    <p>Audit prepared by Northlight Advisory Services, September 2026. For questions, contact <a href="https://bynorthlight.ca" style="color:var(--blue);">Elizabeth Lemoine</a>.</p>
+  </div>
+
+</div>

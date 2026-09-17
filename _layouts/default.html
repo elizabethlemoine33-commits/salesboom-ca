@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>{{ page.title | default: site.title }}</title>
+  {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+  <link rel="canonical" href="{{ page.url | prepend: site.url }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Salesboom — Canadian Enterprise CRM">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  {% if page.description %}<meta property="og:description" content="{{ page.description }}">{% endif %}
+  <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/salesboom-og.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+  {% if page.description %}<meta name="twitter:description" content="{{ page.description }}">{% endif %}
+  <meta name="twitter:image" content="{{ site.url }}/assets/img/salesboom-og.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,600&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+  /*
+    Salesboom brand tokens — shared across all pages
+    Blue   #003C78  "sales" wordmark
+    Orange #F05A00  "boom" wordmark — headline italics & scores only
+    Green  #00783C  orbital ring — ALL CTAs
+    Navy   #001E3C  deep backgrounds
+  */
+  :root {
+    --navy:       #001E3C;
+    --blue:       #003C78;
+    --blue-mid:   #1A52A0;
+    --blue-light: #5080C8;
+    --orange:     #F05A00;
+    --green:      #00783C;
+    --green-hover:#005C2D;
+    --bg:         #FFFFFF;
+    --bg-alt:     #F3F5F9;
+    --text:       #0D1C2E;
+    --text-2:     #3A4F68;
+    --muted:      #5A6E8A;
+    --border:     #D4DCE8;
+    --card:       #FFFFFF;
+    --shadow:     0 2px 16px rgba(0,60,120,.09);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:     #09172A; --bg-alt: #0D1E35; --text: #DCE8F5;
+      --text-2: #8AAAC8; --muted: #6A85A5; --border: #1C3356;
+      --card:   #0D1E35; --shadow: 0 2px 16px rgba(0,0,0,.45);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:     #09172A; --bg-alt: #0D1E35; --text: #DCE8F5;
+    --text-2: #8AAAC8; --muted: #6A85A5; --border: #1C3356;
+    --card:   #0D1E35; --shadow: 0 2px 16px rgba(0,0,0,.45);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; display: block; }
+
+  /* Accessible focus states — WCAG 2.4.7 */
+  a:focus-visible, summary:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 2px;
+  }
+
+  .container { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+  /* Eyebrows */
+  .section-eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 11.5px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--blue); display: block; margin-bottom: 10px;
+  }
+  .section-eyebrow-light {
+    font-family: 'DM Mono', monospace; font-size: 11.5px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--blue-light); display: block; margin-bottom: 10px;
+  }
+
+  /* Buttons */
+  .btn-green {
+    display: inline-block; background: var(--green); color: #fff !important;
+    font-weight: 600; font-size: 14.5px; padding: 12px 26px;
+    border-radius: 4px; transition: background .16s; white-space: nowrap; text-decoration: none !important;
+  }
+  .btn-green:hover { background: var(--green-hover); }
+  .btn-outline-blue {
+    display: inline-block; color: var(--blue) !important; font-size: 14px; font-weight: 600;
+    padding: 11px 22px; border: 1.5px solid var(--blue); border-radius: 4px;
+    transition: all .16s; white-space: nowrap; text-decoration: none !important;
+  }
+  .btn-outline-blue:hover { background: var(--blue); color: #fff !important; }
+
+  /* ── Disclaimer stripe ── */
+  .disclaimer-stripe {
+    background: rgba(0,60,120,.07); border-bottom: 1px solid rgba(0,60,120,.15);
+    padding: 8px 24px; text-align: center;
+  }
+  .disclaimer-stripe p {
+    font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .07em;
+    color: var(--blue-mid);
+  }
+  .disclaimer-stripe a { color: var(--blue); font-weight: 500; }
+
+  /* ══ HEADER ══ */
+  .site-header {
+    position: sticky; top: 0; z-index: 200;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    display: flex; align-items: center; gap: 20px;
+    height: 64px; max-width: 1060px; margin: 0 auto; padding: 0 24px;
+  }
+  .logo-link { flex-shrink: 0; text-decoration: none !important; }
+  .logo-img  { height: 38px; width: auto; }
+
+  .main-nav { display: flex; align-items: center; gap: 2px; flex: 1; }
+  .nav-item { position: relative; }
+  .nav-item > a {
+    font-size: 13px; font-weight: 500; color: var(--text-2);
+    padding: 8px 10px; border-radius: 4px; transition: all .14s;
+    white-space: nowrap; text-decoration: none !important;
+    display: flex; align-items: center; gap: 3px;
+  }
+  .nav-item > a:hover { color: var(--blue); background: rgba(0,60,120,.05); }
+  .nav-hl > a { color: var(--blue) !important; font-weight: 600; }
+  .nav-arrow { font-size: 9px; opacity: .5; margin-top: 1px; }
+
+  .dropdown {
+    display: none; position: absolute; top: calc(100% + 4px); left: 0;
+    background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+    box-shadow: var(--shadow); min-width: 210px; padding: 6px 0; z-index: 300;
+  }
+  .dropdown.dd-wide { min-width: 460px; flex-direction: row; display: none; }
+  .nav-item:hover .dropdown, .nav-item:focus-within .dropdown { display: block; }
+  .nav-item:hover .dd-wide,  .nav-item:focus-within .dd-wide  { display: flex; }
+  .dd-col { flex: 1; padding: 8px 0; border-right: 1px solid var(--border); }
+  .dd-col:last-child { border-right: none; }
+  .dd-col-head {
+    font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); padding: 6px 16px 4px;
+  }
+  .dropdown a, .dd-col a {
+    display: block; font-size: 13px; color: var(--text);
+    padding: 7px 16px; transition: background .12s, color .12s;
+    text-decoration: none !important; white-space: nowrap;
+  }
+  .dropdown a:hover, .dd-col a:hover { background: rgba(0,60,120,.05); color: var(--blue); }
+
+  .header-cta {
+    flex-shrink: 0; font-size: 13px; font-weight: 600;
+    background: var(--green); color: #fff !important;
+    padding: 8px 18px; border-radius: 4px; text-decoration: none !important;
+    transition: background .14s; white-space: nowrap;
+  }
+  .header-cta:hover { background: var(--green-hover); }
+
+  /* ══ FOOTER ══ */
+  footer { background: var(--navy); padding: 52px 0 0; }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px;
+    max-width: 1060px; margin: 0 auto; padding: 0 24px 44px;
+  }
+  .f-logo-img { height: 32px; width: auto; margin-bottom: 12px; filter: brightness(0) invert(1); opacity: .85; }
+  .f-tagline { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 12px; }
+  .f-desc  { font-size: 12.5px; color: rgba(255,255,255,.68); line-height: 1.6; margin-bottom: 16px; }
+  .f-socials { display: flex; gap: 7px; }
+  .f-social {
+    font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .07em; text-transform: uppercase;
+    padding: 5px 10px; border: 1px solid rgba(255,255,255,.22); border-radius: 3px;
+    color: rgba(255,255,255,.72); transition: all .14s; text-decoration: none !important;
+  }
+  .f-social:hover { color: #fff; border-color: rgba(255,255,255,.50); }
+  .f-col h4 {
+    font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: rgba(255,255,255,.65); margin-bottom: 14px;
+  }
+  .f-col ul  { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .f-col li a { font-size: 13px; color: rgba(255,255,255,.80); transition: color .14s; text-decoration: none !important; }
+  .f-col li a:hover { color: #fff; }
+  .footer-legal {
+    border-top: 1px solid rgba(255,255,255,.08); max-width: 1060px; margin: 0 auto;
+    padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 12px;
+    align-items: center; justify-content: space-between;
+  }
+  .f-legal-links { display: flex; gap: 16px; flex-wrap: wrap; }
+  .f-legal-links a { font-size: 11px; color: rgba(255,255,255,.55); transition: color .14s; }
+  .f-legal-links a:hover { color: rgba(255,255,255,.88); }
+  .f-copy { font-size: 11px; color: rgba(255,255,255,.50); }
+  .f-compliance {
+    font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(255,255,255,.32);
+    letter-spacing: .04em; width: 100%; padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,.06); margin-top: 4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .main-nav { display: none; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  </style>
+
+  {% if page.page_css %}
+  <style>{{ page.page_css }}</style>
+  {% endif %}
+</head>
+<body>
+
+<!-- Disclaimer stripe -->
+<div class="disclaimer-stripe">
+  <p>Pre-engagement proposal prepared by <a href="https://bynorthlight.ca">Northlight Advisory Services</a> · This is not the official Salesboom website</p>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="{{ site.url }}/" class="logo-link">
+      <img src="{{ site.url }}/assets/img/salesboom-logo-clean.png" alt="Salesboom Cloud CRM" class="logo-img">
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="#">Products <span class="nav-arrow" aria-hidden="true">▾</span></a>
+        <div class="dropdown dd-wide" role="menu">
+          <div class="dd-col">
+            <div class="dd-col-head">CRM Platform</div>
+            <a href="#" role="menuitem">Revenue Engine</a>
+            <a href="#" role="menuitem">Integration Station</a>
+            <a href="#" role="menuitem">Data Engine</a>
+            <a href="#" role="menuitem">AMS — Agent Management System</a>
+          </div>
+          <div class="dd-col">
+            <div class="dd-col-head">Marketing &amp; GTM</div>
+            <a href="#" role="menuitem">Demandinator</a>
+            <a href="#" role="menuitem">Promptuit</a>
+            <a href="#" role="menuitem">Content Relationship Management</a>
+            <a href="#" role="menuitem">Context Engine</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item nav-hl">
+        <a href="#">Canadian Enterprise Stack <span class="nav-arrow" aria-hidden="true">▾</span></a>
+        <div class="dropdown dd-wide" role="menu">
+          <div class="dd-col">
+            <div class="dd-col-head">The Platform</div>
+            <a href="#" role="menuitem">10-Pillar Overview</a>
+            <a href="#" role="menuitem">CRM &amp; RevOps</a>
+            <a href="#" role="menuitem">AI &amp; Agents</a>
+            <a href="#" role="menuitem">Data Management</a>
+          </div>
+          <div class="dd-col">
+            <div class="dd-col-head">Differentiators</div>
+            <a href="#" role="menuitem">Canadian Data Sovereignty</a>
+            <a href="#" role="menuitem">A2A + MCP Infrastructure</a>
+            <a href="#" role="menuitem">People as a Service</a>
+            <a href="#" role="menuitem">200+ Industry Editions</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">Industries <span class="nav-arrow" aria-hidden="true">▾</span></a>
+        <div class="dropdown" role="menu">
+          <a href="#" role="menuitem">Construction</a>
+          <a href="#" role="menuitem">Healthcare</a>
+          <a href="#" role="menuitem">Government &amp; Municipalities</a>
+          <a href="#" role="menuitem">Financial Services</a>
+          <a href="#" role="menuitem">Manufacturing</a>
+          <a href="#" role="menuitem">All 200+ Industries →</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="#">Why Canada</a></div>
+      <div class="nav-item">
+        <a href="#">Compare <span class="nav-arrow" aria-hidden="true">▾</span></a>
+        <div class="dropdown" role="menu">
+          <a href="#" role="menuitem">vs Salesforce</a>
+          <a href="#" role="menuitem">vs HubSpot</a>
+          <a href="#" role="menuitem">vs Microsoft Dynamics</a>
+          <a href="#" role="menuitem">vs Pipedrive</a>
+        </div>
+      </div>
+    </nav>
+    <a href="#" class="header-cta">Start Free (CAD)</a>
+  </div>
+</header>
+
+<main>
+{{ content }}
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <img src="{{ site.url }}/assets/img/salesboom-logo-clean.png" alt="Salesboom Cloud CRM" class="f-logo-img">
+      <div class="f-tagline">Canada's CRM since 2003</div>
+      <p class="f-desc">Halifax, Nova Scotia. Canada's first Cloud CRM vendor. 23 years of enterprise software, built and hosted on Canadian soil.</p>
+      <div class="f-socials">
+        <a href="#" class="f-social">LinkedIn</a>
+        <a href="#" class="f-social">YouTube</a>
+        <a href="#" class="f-social">X / Twitter</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#">Revenue Engine</a></li>
+        <li><a href="#">Integration Station</a></li>
+        <li><a href="#">Data Engine</a></li>
+        <li><a href="#">AMS</a></li>
+        <li><a href="#">Demandinator</a></li>
+        <li><a href="#">Promptuit</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Fast Track</a></li>
+        <li><a href="#">Built to Suit</a></li>
+        <li><a href="#">People as a Service</a></li>
+        <li><a href="#">CRM Concierge</a></li>
+        <li><a href="#">Editions &amp; Pricing (CAD)</a></li>
+        <li><a href="#">Compare</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">Why Canada</a></li>
+        <li><a href="#">About Salesboom</a></li>
+        <li><a href="#">Blog &amp; Resources</a></li>
+        <li><a href="#">Security</a></li>
+        <li><a href="#">Partner Program</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <div class="f-legal-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Security</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <div class="f-copy">© 2003–2026 Salesboom Inc.</div>
+    <div class="f-compliance">Hosted 100% on Canadian bare-metal infrastructure (EastLink AS11260) · PIPEDA compliant · CASL compliant · Data sovereignty guaranteed · No US parent entity · No CLOUD Act exposure</div>
+  </div>
+</footer>
+
+{% if page.schema %}
+<script type="application/ld+json">{{ page.schema }}</script>
+{% endif %}
+
+</body>
+</html>

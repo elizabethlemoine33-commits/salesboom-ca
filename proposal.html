@@ -1,0 +1,228 @@
+---
+layout: default
+title: "A Proposal for salesboom.ca — Northlight Advisory Services"
+description: "Pre-engagement proposal from Northlight Advisory Services for Salesboom Inc. — covering website accessibility, brand alignment, and GEO/AEO optimisation."
+permalink: /proposal/
+---
+
+<style>
+.proposal-hero { background: var(--navy); padding: 56px 0 48px; }
+.proposal-hero .container { max-width: 800px; }
+.prop-from { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 14px; }
+.proposal-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(26px, 4vw, 40px); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 16px; text-wrap: balance; }
+.proposal-hero h1 em { font-style: italic; font-weight: 300; color: #5080C8; }
+.proposal-hero p { font-size: 15.5px; color: rgba(255,255,255,.70); line-height: 1.68; max-width: 600px; }
+.prop-meta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 20px; }
+.prop-meta-item { display: flex; flex-direction: column; gap: 3px; }
+.prop-meta-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.40); }
+.prop-meta-value { font-size: 13px; color: rgba(255,255,255,.78); font-weight: 500; }
+
+.proposal-body { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+
+.prop-section { margin-bottom: 48px; }
+.prop-section h2 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 14px; line-height: 1.2; }
+.prop-section h2 em { font-style: italic; font-weight: 300; color: var(--blue); }
+.prop-section p { font-size: 15px; color: var(--text-2); line-height: 1.72; margin-bottom: 14px; }
+.prop-section p:last-child { margin-bottom: 0; }
+.prop-section p strong { color: var(--text); }
+
+.prop-divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+/* Finding cards */
+.finding-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.finding-card { padding: 14px 18px; border-radius: 4px; border-left: 3px solid; }
+.fc-fail { background: #FEF2F2; border-color: #DC2626; }
+.fc-warn { background: #FFFBEB; border-color: #D97706; }
+.fc-opp  { background: rgba(0,60,120,.04); border-color: var(--blue); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .fc-fail { background: #1F0909; }
+  :root:not([data-theme="light"]) .fc-warn { background: #1C1107; }
+  :root:not([data-theme="light"]) .fc-opp  { background: rgba(0,60,120,.12); }
+}
+.fc-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; margin-bottom: 4px; }
+.fc-fail .fc-label { color: #DC2626; } .fc-warn .fc-label { color: #D97706; } .fc-opp .fc-label { color: var(--blue); }
+.fc-text { font-size: 13.5px; color: var(--text); line-height: 1.55; }
+
+/* Deliverables */
+.deliverables-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 20px; }
+.deliverable-card {
+  background: var(--card); border: 1px solid var(--border); border-top: 3px solid var(--blue);
+  padding: 20px 22px; border-radius: 4px; text-decoration: none !important;
+  transition: box-shadow .2s, transform .18s; display: block;
+}
+.deliverable-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.del-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.del-title { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+.del-desc { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+.del-link { font-size: 12px; font-weight: 600; color: var(--blue); margin-top: 10px; display: block; }
+
+/* Score comparison */
+.score-compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 24px; margin-top: 20px; }
+.sc-block { text-align: center; }
+.sc-num { font-family: 'Fraunces', serif; font-size: 48px; font-weight: 700; line-height: 1; }
+.sc-before { color: #DC2626; } .sc-after { color: #00783C; }
+.sc-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.sc-arrow { font-size: 28px; color: var(--muted); text-align: center; }
+.sc-gain { font-size: 13px; color: var(--text-2); line-height: 1.55; }
+
+/* Next steps */
+.next-steps { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 28px 28px 20px; }
+.next-steps h3 { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 18px; }
+.step-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.step-item { display: flex; gap: 14px; align-items: start; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.step-item:last-child { border-bottom: none; padding-bottom: 0; }
+.step-num { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--blue); flex-shrink: 0; width: 20px; text-align: right; padding-top: 2px; }
+.step-content { flex: 1; }
+.step-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.step-detail { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+
+/* Contact */
+.contact-block { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); margin-top: 48px; }
+.contact-block p { font-size: 15px; color: var(--text-2); line-height: 1.65; margin-bottom: 14px; }
+.contact-block a { color: var(--blue); font-weight: 600; }
+
+@media (max-width: 640px) {
+  .deliverables-grid { grid-template-columns: 1fr; }
+  .score-compare { grid-template-columns: 1fr; }
+  .sc-arrow { transform: rotate(90deg); }
+}
+</style>
+
+<div class="proposal-hero">
+  <div class="container">
+    <div class="prop-from">Pre-engagement proposal · Prepared by Northlight Advisory Services</div>
+    <h1>A stronger salesboom.ca<br><em>starts with the right foundation.</em></h1>
+    <p>This package documents what we found in the current salesboom.com, what we're proposing to fix, and what the result looks like. The demo, brand guide, and GEO audits in this package are working deliverables — not mockups.</p>
+    <div class="prop-meta">
+      <div class="prop-meta-item"><span class="prop-meta-label">Prepared for</span><span class="prop-meta-value">Troy Muise, CEO &amp; Co-Founder, Salesboom Inc.</span></div>
+      <div class="prop-meta-item"><span class="prop-meta-label">Prepared by</span><span class="prop-meta-value">Elizabeth Lemoine, Northlight Advisory Services</span></div>
+      <div class="prop-meta-item"><span class="prop-meta-label">Date</span><span class="prop-meta-value">September 2026</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="proposal-body">
+
+  <!-- What We Found -->
+  <div class="prop-section">
+    <h2>What we found on <em>salesboom.com</em></h2>
+    <p>Before proposing anything, we audited the current site against modern accessibility standards and Generative Engine Optimisation (GEO) criteria — the same criteria that determine how AI-powered search engines like Google AI Overviews, Bing Copilot, and Perplexity cite and rank pages.</p>
+    <p>The current site was built for a different era of the web. It has strengths — a clear brand identity, a genuine differentiation story, and a large product portfolio — but several structural issues limit how it performs with both human visitors and AI search engines today.</p>
+    <div class="finding-grid">
+      <div class="finding-card fc-fail">
+        <div class="fc-label">Accessibility — WCAG 2.1 AA failures</div>
+        <div class="fc-text">Body text as small as 11–12px throughout. CTA buttons at contrast ratios below 3:1. No visible keyboard focus states. Table-based layout in sections where modern HTML semantics are required. These aren't visual preferences — they're compliance failures that also disadvantage search ranking.</div>
+      </div>
+      <div class="finding-card fc-fail">
+        <div class="fc-label">GEO — No structured data</div>
+        <div class="fc-text">No JSON-LD schema of any kind: no Organization, no FAQPage, no WebPage. When an AI engine encounters a query about Canadian enterprise CRM or data sovereignty, it has no machine-readable signal to extract from salesboom.com. The content is present; the markup that makes it citable is not.</div>
+      </div>
+      <div class="finding-card fc-warn">
+        <div class="fc-label">GEO — No FAQ or citability structure</div>
+        <div class="fc-text">No FAQ sections, no comparison tables with structured markup, no definition blocks for novel terms like "data sovereignty" or "A2A." AI engines cite pages that answer questions directly — the current site doesn't answer questions in a crawlable structure.</div>
+      </div>
+      <div class="finding-card fc-opp">
+        <div class="fc-label">Opportunity — The differentiation story is strong</div>
+        <div class="fc-text">The CLOUD Act / data sovereignty narrative is genuinely differentiated in the Canadian enterprise CRM market and is exactly the kind of content AI engines will cite when Canadian businesses search for "US CLOUD Act CRM risk" or "data sovereignty enterprise software Canada." The story is there. It just needs to be structured correctly.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="prop-divider">
+
+  <!-- What We're Proposing -->
+  <div class="prop-section">
+    <h2>What we're <em>proposing</em></h2>
+    <p>Three interconnected workstreams, each building on the last:</p>
+
+    <div class="finding-grid">
+      <div class="finding-card fc-opp">
+        <div class="fc-label">1 — Brand alignment + accessibility</div>
+        <div class="fc-text"><strong>Extract the brand system from the logo and establish a token-based design language:</strong> blue for structure, orange for headlines, green for all CTAs. Apply WCAG 2.1 AA compliance across every text and contrast combination. The result is a brand guide that can govern every future page, component, and campaign — and a site that passes accessibility audits by design, not by retrofit.</div>
+      </div>
+      <div class="finding-card fc-opp">
+        <div class="fc-label">2 — GEO/AEO architecture</div>
+        <div class="fc-text"><strong>Structure the content so AI engines can extract and cite it:</strong> FAQPage schema, Organization schema, an at-a-glance summary block, semantic heading hierarchy, proper blockquote markup for CEO quotes, and ordered lists where sequence carries meaning. The goal is to make salesboom.ca the page an AI engine cites when someone asks about Canadian enterprise CRM or CLOUD Act alternatives.</div>
+      </div>
+      <div class="finding-card fc-opp">
+        <div class="fc-label">3 — Homepage redesign (this demo)</div>
+        <div class="fc-text"><strong>A working demonstration of the above, built and deployed:</strong> the demo in this package is not a mockup. It is a live, accessible, GEO-optimised homepage implementation using the brand system we extracted. Every section, component, and font choice is documented in the brand guide. The GEO audit scores the result.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="prop-divider">
+
+  <!-- GEO Score Comparison -->
+  <div class="prop-section">
+    <h2>The GEO score — <em>before and after</em></h2>
+    <p>GEO (Generative Engine Optimisation) scores how well a page performs with AI-powered search engines across five dimensions: crawler accessibility, citability signals, technical SEO, schema markup, and brand authority. The current salesboom.com scores in the mid-30s. The proposed design scores 87+ on a deployed URL with full schema implementation.</p>
+    <div class="score-compare">
+      <div class="sc-block">
+        <div class="sc-num sc-before">~37</div>
+        <div class="sc-label">salesboom.com · current</div>
+      </div>
+      <div class="sc-arrow">→</div>
+      <div class="sc-block">
+        <div class="sc-num sc-after">87+</div>
+        <div class="sc-label">salesboom.ca · proposed</div>
+      </div>
+    </div>
+    <p style="margin-top:16px;">The full methodology and dimension-by-dimension scoring for the proposed design is in the GEO audit page. The before audit (salesboom.com scored against the same framework) is in the comparison audit page.</p>
+  </div>
+
+  <hr class="prop-divider">
+
+  <!-- Deliverables in this package -->
+  <div class="prop-section">
+    <h2>What's in <em>this package</em></h2>
+    <p>Four working deliverables — each a complete artefact, not a slide or a PDF:</p>
+    <div class="deliverables-grid">
+      <a href="{{ site.url }}/" class="deliverable-card" aria-label="View the homepage demo">
+        <div class="del-tag">Live demo</div>
+        <div class="del-title">Homepage redesign</div>
+        <div class="del-desc">The proposed salesboom.ca homepage — fully accessible, GEO-optimised, brand-aligned. Working in your browser right now.</div>
+        <span class="del-link">View the demo →</span>
+      </a>
+      <a href="{{ site.url }}/brand-guide/" class="deliverable-card">
+        <div class="del-tag">Reference document</div>
+        <div class="del-title">Brand guide</div>
+        <div class="del-desc">The Salesboom brand system — colour tokens, typography scale, component patterns, and a .com vs .ca comparison showing exactly what changed and why.</div>
+        <span class="del-link">Open brand guide →</span>
+      </a>
+      <a href="{{ site.url }}/geo-after/" class="deliverable-card">
+        <div class="del-tag">GEO audit — proposed</div>
+        <div class="del-title">GEO score: salesboom.ca</div>
+        <div class="del-desc">Full dimension-by-dimension scoring of the proposed design. Includes the punch list of remaining items and the expected final score.</div>
+        <span class="del-link">Read the GEO audit →</span>
+      </a>
+      <a href="{{ site.url }}/geo-before/" class="deliverable-card">
+        <div class="del-tag">GEO audit — current site</div>
+        <div class="del-title">GEO score: salesboom.com</div>
+        <div class="del-desc">The same GEO framework applied to the current salesboom.com. Shows exactly where the current site loses ground and why the gap is as large as it is.</div>
+        <span class="del-link">Read the baseline audit →</span>
+      </a>
+    </div>
+  </div>
+
+  <hr class="prop-divider">
+
+  <!-- Next Steps -->
+  <div class="prop-section">
+    <div class="next-steps">
+      <h3>If you want to move forward</h3>
+      <ol class="step-list">
+        <li class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">Explore the demo</div><div class="step-detail">Navigate the homepage, open the FAQ items, test the nav on mobile. This is the actual proposed design — not a wireframe. Note what works and what you'd change.</div></div></li>
+        <li class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">Review the brand guide</div><div class="step-detail">The brand guide documents every colour, typeface, and component pattern with the rationale. If your team has existing brand guidelines, this is where we reconcile them.</div></div></li>
+        <li class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">Book a working session</div><div class="step-detail">A 60-minute call to walk through the demo, review the GEO audit findings together, and scope the full engagement. We cover what needs to change, what can be done in phases, and what a timeline looks like.</div></div></li>
+        <li class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">We build the rest of the site</div><div class="step-detail">Using this homepage as the design system foundation, each additional page — Why Canada, Products, Compare, Industries, Resources — is built to the same brand and GEO standard. Pages as a service: each one complete and citable.</div></div></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="contact-block">
+    <p>Questions about this proposal or the work in this package?</p>
+    <p><a href="https://bynorthlight.ca">Elizabeth Lemoine</a> · Northlight Advisory Services · <a href="mailto:hello@bynorthlight.ca">hello@bynorthlight.ca</a></p>
+  </div>
+
+</div>
