@@ -79,21 +79,23 @@ body { padding-block: 0; }
 .pillar-tag.tag-green { background: rgba(0,120,60,.07); color: #00783C; border-color: rgba(0,120,60,.15); }
 .pillar-tag.tag-orange { background: rgba(240,90,0,.07); color: #F05A00; border-color: rgba(240,90,0,.15); }
 
-/* ══ DEPLOYMENT TABLE ══ */
-.deployment-section { margin-bottom: 48px; }
-.deployment-section h2 { font-family: 'Lora', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-.deployment-section h2 em { font-style: italic; font-weight: 300; color: var(--blue); }
-.answer-block { background: rgba(0,60,120,.04); border: 1px solid rgba(0,60,120,.12); border-left: 3px solid var(--blue); border-radius: 0 4px 4px 0; padding: 14px 18px; margin-bottom: 18px; }
-.answer-block p { font-size: 15px; color: var(--text-2); line-height: 1.7; margin: 0; }
-.deploy-wrap { overflow-x: auto; margin: 18px 0; border: 1px solid var(--border); border-radius: 6px; }
+/* ══ DEPLOYMENT DARK BAND ══ */
+.dark-band { background: var(--navy); padding: 52px 24px; }
+.dark-band-inner { max-width: 860px; margin: 0 auto; }
+.deployment-section { margin-bottom: 0; }
+.deployment-section h2 { font-family: 'Lora', serif; font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.deployment-section h2 em { font-style: italic; font-weight: 300; color: #5080C8; }
+.answer-block { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10); border-left: 3px solid #5080C8; border-radius: 0 4px 4px 0; padding: 14px 18px; margin-bottom: 18px; }
+.answer-block p { font-size: 15px; color: rgba(255,255,255,.78); line-height: 1.7; margin: 0; }
+.deploy-wrap { overflow-x: auto; margin: 18px 0; border: 1px solid rgba(255,255,255,.10); border-radius: 6px; }
 .deploy-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-.deploy-table th { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .09em; text-transform: uppercase; font-weight: 500; color: var(--muted); padding: 11px 14px; background: var(--bg-alt); border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
-.deploy-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text-2); }
+.deploy-table th { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .09em; text-transform: uppercase; font-weight: 500; color: rgba(255,255,255,.50); padding: 11px 14px; background: rgba(255,255,255,.04); border-bottom: 1px solid rgba(255,255,255,.10); text-align: left; white-space: nowrap; }
+.deploy-table td { padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,.07); color: rgba(255,255,255,.70); }
 .deploy-table tr:last-child td { border-bottom: none; }
-.deploy-table td:first-child { font-weight: 600; color: var(--text); font-size: 13px; }
-.deploy-table .yes-cell { color: #00783C; font-weight: 600; font-size: 13px; }
-.deploy-table .partial-cell { color: #F05A00; font-size: 12px; }
-.deploy-table .no-cell { color: var(--muted); font-size: 12px; }
+.deploy-table td:first-child { font-weight: 600; color: rgba(255,255,255,.90); font-size: 13px; }
+.deploy-table .yes-cell { color: #6FD869; font-weight: 600; font-size: 13px; }
+.deploy-table .partial-cell { color: #F07840; font-size: 12px; }
+.deploy-table .no-cell { color: rgba(255,255,255,.45); font-size: 12px; }
 
 /* ══ FAQ ACCORDION ══ */
 .faq-section { margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--border); }
@@ -414,37 +416,45 @@ body { padding-block: 0; }
 
   </div>
 
-  <!-- DEPLOYMENT TABLE -->
-  <div class="deployment-section">
-    <h2>How does deployment <em>flexibility</em> work?</h2>
-    <div class="answer-block"><p>Each pillar is designed to deploy independently or as part of the full integrated Stack. Start with Revenue Engine and add pillars as your requirements grow — or deploy the full Stack from day one if the scope is clear. There is no forced bundling and no minimum pillar count.</p></div>
+</div><!-- /page-body -->
 
-    <div class="deploy-wrap" role="region" aria-label="Pillar deployment options">
-      <table class="deploy-table">
-        <thead>
-          <tr>
-            <th>Pillar</th>
-            <th>Standalone</th>
-            <th>Headless (alongside existing CRM)</th>
-            <th>Full Stack</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Revenue Engine</td><td class="yes-cell">✓ Primary</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
-          <tr><td>Data Engine</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
-          <tr><td>Integration Station</td><td class="yes-cell">✓</td><td class="yes-cell">✓ Required</td><td class="yes-cell">✓</td></tr>
-          <tr><td>AMS — Agent Management System</td><td class="partial-cell">Requires Integration Station</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
-          <tr><td>Context Engine</td><td class="partial-cell">Requires Revenue Engine or Data Engine</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
-          <tr><td>Demandinator</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
-          <tr><td>Promptuit</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
-          <tr><td>Content Relationship Management</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
-          <tr><td>Fast Track</td><td class="yes-cell">✓ Any pillar</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
-          <tr><td>Built to Suit</td><td class="yes-cell">✓ Any pillar</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
-          <tr><td>People as a Service</td><td class="yes-cell">✓ Any pillar</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
-        </tbody>
-      </table>
+<!-- DEPLOYMENT DARK BAND -->
+<div class="dark-band">
+  <div class="dark-band-inner">
+    <div class="deployment-section">
+      <h2>How does deployment <em>flexibility</em> work?</h2>
+      <div class="answer-block"><p>Each pillar is designed to deploy independently or as part of the full integrated Stack. Start with Revenue Engine and add pillars as your requirements grow — or deploy the full Stack from day one if the scope is clear. There is no forced bundling and no minimum pillar count.</p></div>
+
+      <div class="deploy-wrap" role="region" aria-label="Pillar deployment options">
+        <table class="deploy-table">
+          <thead>
+            <tr>
+              <th>Pillar</th>
+              <th>Standalone</th>
+              <th>Headless (alongside existing CRM)</th>
+              <th>Full Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Revenue Engine</td><td class="yes-cell">✓ Primary</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Data Engine</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Integration Station</td><td class="yes-cell">✓</td><td class="yes-cell">✓ Required</td><td class="yes-cell">✓</td></tr>
+            <tr><td>AMS — Agent Management System</td><td class="partial-cell">Requires Integration Station</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Context Engine</td><td class="partial-cell">Requires Revenue Engine or Data Engine</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Demandinator</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Promptuit</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Content Relationship Management</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Fast Track</td><td class="yes-cell">✓ Any pillar</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Built to Suit</td><td class="yes-cell">✓ Any pillar</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+            <tr><td>People as a Service</td><td class="yes-cell">✓ Any pillar</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
+</div><!-- /dark-band -->
+
+<div class="page-body">
 
   <!-- FAQ -->
   <div class="faq-section" aria-label="Frequently asked questions">
@@ -485,4 +495,4 @@ body { padding-block: 0; }
       <a href="#" class="btn-outline-blue">Book a Conversation →</a>
     </div>
   </div>
-</div>
+</div><!-- /page-body -->
