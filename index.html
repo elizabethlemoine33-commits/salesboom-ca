@@ -62,7 +62,7 @@ schema: |
             "name": "Can we keep our existing CRM and still use Salesboom?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Salesboom runs headless as a CRM for your CRM. The Revenue Engine, Integration Station, and Data Engine connect to Salesforce, HubSpot, Microsoft Dynamics, Pipedrive, and most major platforms via API, MCP, and A2A. You can add Canadian sovereignty, agentic AI infrastructure, and RevOps capability without replacing your existing system."
+              "text": "Yes. Salesboom runs headless as a CRM for your CRM. Enterprise CRM, Integration Solutions, and Data Solutions connect to Salesforce, HubSpot, Microsoft Dynamics, Pipedrive, and most major platforms via API, MCP, and A2A. You can add Canadian sovereignty, agentic AI infrastructure, and RevOps capability without replacing your existing system."
             }
           },
           {
@@ -70,7 +70,7 @@ schema: |
             "name": "What is the Canadian Enterprise Stack?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Canadian Enterprise Stack is Salesboom's ten-pillar enterprise platform: Revenue Engine (CRM + GTM + RevOps), Integration Station (middleware OS), Data Engine (MDM), AMS (Agent Management System), Demandinator (demand generation), Promptuit (prompt management), Content Relationship Management, Context Engine, plus the implementation services layer — Fast Track, Built to Suit, and People as a Service. Each pillar deploys independently or as an integrated system, hosted on 100% Canadian bare-metal infrastructure."
+              "text": "The Canadian Enterprise Stack is Salesboom's ten-pillar enterprise platform across four layers: Business Applications — Enterprise CRM, RevOps, PRM, ERM; Technical Platform — Data Solutions (MDM), Integration Solutions (middleware OS, MCP, A2A), Communications; Intelligence and Infrastructure — AI and Agentic Workforce (AMS), Infrastructure (100% Canadian bare-metal hosting); Sovereign Delivery — Professional Services (Fast Track, Built-to-Suit, PaaS, CRM Concierge). Each pillar deploys independently or as an integrated system, hosted on 100% Canadian bare-metal infrastructure."
             }
           },
           {
@@ -111,61 +111,63 @@ schema: |
 
 <style>
 /* ══ HERO ══ */
-.hero { background: var(--bg); padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
+.hero { background: var(--navy); padding: 64px 0 56px; border-bottom: 1px solid rgba(255,255,255,.08); }
 .hero-inner { display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: start; margin-top: 24px; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .11em; text-transform: uppercase;
-  color: var(--blue); border: 1px solid rgba(0,60,120,.18); background: rgba(0,60,120,.04);
+  color: #5080C8; border: 1px solid rgba(80,128,200,.28); background: rgba(80,128,200,.10);
   padding: 4px 12px; border-radius: 20px; margin-bottom: 22px;
 }
 .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
 .hero h1 {
   font-family: 'Lora', serif; font-size: clamp(34px, 4.5vw, 50px);
-  font-weight: 700; line-height: 1.08; color: var(--text); margin-bottom: 18px; text-wrap: balance;
+  font-weight: 700; line-height: 1.08; color: #fff; margin-bottom: 18px; text-wrap: balance;
 }
 .hero h1 em { font-style: italic; font-weight: 300; color: var(--orange); }
 
 /* At-a-Glance block — GEO citability signal */
 .at-a-glance {
-  background: rgba(0,60,120,.04); border: 1px solid rgba(0,60,120,.14);
-  border-left: 3px solid var(--blue); border-radius: 4px;
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
+  border-left: 3px solid #5080C8; border-radius: 4px;
   padding: 14px 18px; margin-bottom: 22px;
 }
 .at-a-glance-label {
   font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .13em;
-  text-transform: uppercase; color: var(--blue); margin-bottom: 8px;
+  text-transform: uppercase; color: #5080C8; margin-bottom: 8px;
 }
 .at-a-glance ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
 .at-a-glance li {
-  font-size: 14px; color: var(--text-2); padding-left: 16px; position: relative; line-height: 1.5;
+  font-size: 14px; color: rgba(255,255,255,.78); padding-left: 16px; position: relative; line-height: 1.5;
 }
-.at-a-glance li::before { content: '→'; position: absolute; left: 0; color: var(--blue); font-size: 12px; top: 3px; }
+.at-a-glance li::before { content: '→'; position: absolute; left: 0; color: #5080C8; font-size: 12px; top: 3px; }
 
-.hero-sub { font-size: 16px; color: var(--text-2); line-height: 1.72; margin-bottom: 30px; max-width: 520px; }
+.hero-sub { font-size: 16px; color: rgba(255,255,255,.72); line-height: 1.72; margin-bottom: 30px; max-width: 520px; }
 .hero-ctas { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 32px; }
-.trust-strip { display: flex; flex-wrap: wrap; gap: 10px 18px; border-top: 1px solid var(--border); padding-top: 20px; }
+.trust-strip { display: flex; flex-wrap: wrap; gap: 10px 18px; border-top: 1px solid rgba(255,255,255,.12); padding-top: 20px; }
 .trust-item {
   font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .07em; text-transform: uppercase;
-  color: var(--muted); display: flex; align-items: center; gap: 5px;
+  color: rgba(255,255,255,.55); display: flex; align-items: center; gap: 5px;
 }
 .trust-item::before { content: '✓'; color: var(--green); font-weight: 700; }
+.hero .btn-outline-blue { color: rgba(255,255,255,.85) !important; border-color: rgba(255,255,255,.35); }
+.hero .btn-outline-blue:hover { background: rgba(255,255,255,.10); color: #fff !important; border-color: rgba(255,255,255,.60); }
 
 /* Hero proof panel */
 .hero-proof {
-  background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 8px;
   padding: 22px; display: flex; flex-direction: column; gap: 14px;
 }
-.proof-head { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-.proof-row { display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 6px; }
+.proof-head { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.50); }
+.proof-row { display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10); border-radius: 6px; }
 .proof-platform { min-width: 58px; display: flex; align-items: center; }
 .proof-logo { height: 36px; width: auto; display: block; }
 .proof-score { font-family: 'Lora', serif; font-size: 38px; font-weight: 700; color: var(--orange); line-height: 1; }
 .proof-stars { color: var(--orange); font-size: 17px; letter-spacing: 2px; margin: 4px 0 6px; }
-.proof-count { font-size: 12px; color: var(--muted); }
+.proof-count { font-size: 12px; color: rgba(255,255,255,.50); }
 .proof-divider-h { height: 1px; background: var(--border); }
-.proof-quote-mini { font-family: 'Lora', serif; font-size: 15px; font-style: italic; font-weight: 300; color: var(--text-2); line-height: 1.62; }
-.proof-quote-attr { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; margin-top: 6px; letter-spacing: .05em; }
+.proof-quote-mini { font-family: 'Lora', serif; font-size: 15px; font-style: italic; font-weight: 300; color: rgba(255,255,255,.72); line-height: 1.62; }
+.proof-quote-attr { font-size: 12px; color: rgba(255,255,255,.42); font-family: 'DM Mono', monospace; margin-top: 6px; letter-spacing: .05em; }
 
 /* ══ METRICS ══ */
 .metrics { background: var(--blue); }
@@ -379,10 +381,10 @@ schema: |
     <h2>Built for enterprise.<br><em>Delivered as a platform.</em></h2>
     <p class="section-intro">Ten pillars of enterprise capability — CRM, RevOps, data management, integrations, AI agents, and Canadian infrastructure — in one sovereign architecture.</p>
     <div class="stack-grid">
-      <div class="stack-card"><span class="stack-pill">Revenue Engine</span><h3>CRM + GTM + RevOps</h3><p>Full attribution from first touch to closed deal. Works headless alongside Salesforce, HubSpot, or any existing stack.</p></div>
-      <div class="stack-card"><span class="stack-pill">Integration Station</span><h3>Your integration control panel</h3><p>MCP, A2A, REST, SDK — all integrations managed in one place. Native connectors for Sage, NetSuite, SAP, Epicor, QuickBooks, and 50+ more.</p></div>
-      <div class="stack-card"><span class="stack-pill">Data Engine</span><h3>MDM + deduplication + audit trail</h3><p>AI-first master data management with full roll-back. Agents reconcile every data point across your ERP, CRM, and marketing stack.</p></div>
-      <div class="stack-card"><span class="stack-pill">AMS — Agent Management System</span><h3>Autonomous agents at enterprise scale</h3><p>Sourcing agents vet and route leads, employees, and skills against department ICPs — 24/7, with human-in-the-loop governance.</p></div>
+      <div class="stack-card"><span class="stack-pill">Enterprise CRM</span><h3>CRM + RevOps + PRM + ERM</h3><p>Full attribution from first touch to closed deal. Works headless alongside Salesforce, HubSpot, or any existing stack.</p></div>
+      <div class="stack-card"><span class="stack-pill">Integration Solutions</span><h3>Your integration control panel</h3><p>MCP, A2A, REST, SDK — all integrations managed in one place. Native connectors for Sage, NetSuite, SAP, Epicor, QuickBooks, and 50+ more.</p></div>
+      <div class="stack-card"><span class="stack-pill">Data Solutions</span><h3>MDM + deduplication + audit trail</h3><p>Master data management with continuous deduplication and immutable audit trails — a single source of truth across every integrated system.</p></div>
+      <div class="stack-card"><span class="stack-pill">AI &amp; Agentic Workforce</span><h3>Autonomous agents at enterprise scale</h3><p>Sourcing agents vet and route leads, employees, and skills against department ICPs — 24/7, with human-in-the-loop governance.</p></div>
     </div>
   </div>
 </section>
@@ -410,8 +412,8 @@ schema: |
     <div class="faq-list">
       <div class="faq-item"><details><summary><span class="faq-q">What is the CLOUD Act and why does it matter for Canadian enterprise data?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">The US Clarifying Lawful Overseas Use of Data (CLOUD Act) allows US law enforcement to compel American companies to produce customer data held anywhere in the world — including on servers located in Canada. If your CRM or cloud software vendor has a US parent company, your Canadian enterprise data can be accessed by US authorities without a Canadian warrant. <strong>Salesboom is Canadian and has no US parent entity.</strong> Your data is governed exclusively by Canadian law and is not subject to CLOUD Act compulsion.</p></details></div>
       <div class="faq-item"><details><summary><span class="faq-q">What is the difference between data residency and data sovereignty?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a"><strong>Data residency</strong> means your data is physically stored in a specific country. <strong>Data sovereignty</strong> means it is governed by that country's laws and cannot be compelled by a foreign government. AWS Canada, Azure Canada, and Google Cloud Canada offer data residency — but because their parent companies are US corporations, they cannot offer true sovereignty. Salesboom offers both: Canadian servers and Canadian corporate ownership.</p></details></div>
-      <div class="faq-item"><details><summary><span class="faq-q">Can we keep our existing CRM and still use Salesboom?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">Yes. Salesboom runs headless as "A CRM for your CRM." The Revenue Engine, Integration Station, and Data Engine connect to Salesforce, HubSpot, Microsoft Dynamics, Pipedrive, and most major platforms via API, MCP, and A2A. You can add Canadian sovereignty, agentic AI infrastructure, and RevOps capability without replacing your existing system.</p></details></div>
-      <div class="faq-item"><details><summary><span class="faq-q">What is the Canadian Enterprise Stack?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">The Canadian Enterprise Stack is Salesboom's ten-pillar enterprise platform: <strong>Revenue Engine</strong> (CRM + GTM + RevOps), <strong>Integration Station</strong> (middleware OS), <strong>Data Engine</strong> (MDM), <strong>AMS</strong> (Agent Management System), <strong>Demandinator</strong> (demand generation), <strong>Promptuit</strong> (prompt management), <strong>Content Relationship Management</strong>, <strong>Context Engine</strong>, plus Fast Track, Built to Suit, and People as a Service. Each pillar deploys independently or as an integrated system, hosted on 100% Canadian bare-metal infrastructure.</p></details></div>
+      <div class="faq-item"><details><summary><span class="faq-q">Can we keep our existing CRM and still use Salesboom?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">Yes. Salesboom runs headless as "A CRM for your CRM." Enterprise CRM, Integration Solutions, and Data Solutions connect to Salesforce, HubSpot, Microsoft Dynamics, Pipedrive, and most major platforms via API, MCP, and A2A. You can add Canadian sovereignty, agentic AI infrastructure, and RevOps capability without replacing your existing system.</p></details></div>
+      <div class="faq-item"><details><summary><span class="faq-q">What is the Canadian Enterprise Stack?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">The Canadian Enterprise Stack is Salesboom's ten-pillar enterprise platform across four layers: <strong>Business Applications</strong> — Enterprise CRM, RevOps, PRM, ERM; <strong>Technical Platform</strong> — Data Solutions (MDM), Integration Solutions (middleware OS, MCP, A2A), Communications (sovereign web forms, email, calendars); <strong>Intelligence &amp; Infrastructure</strong> — AI &amp; Agentic Workforce (AMS), Infrastructure (100% Canadian bare-metal); <strong>Sovereign Delivery</strong> — Professional Services (Fast Track, Built-to-Suit, PaaS, CRM Concierge). Each pillar deploys independently or as a fully integrated system, hosted on 100% Canadian bare-metal infrastructure.</p></details></div>
       <div class="faq-item"><details><summary><span class="faq-q">What is People as a Service?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">People as a Service is Salesboom's fractional talent delivery model. Rather than selling software alone, Salesboom provides dedicated Canadian professionals — developers, system architects, marketers, data analysts, operations specialists, and CRM concierge teams — embedded in your organization for the engagement. This is not Sales as a Service; it is a full cross-functional capability.</p></details></div>
       <div class="faq-item"><details><summary><span class="faq-q">What is A2A and how does Salesboom use it?</span><span class="faq-icon" aria-hidden="true">+</span></summary><p class="faq-a">Agent-to-Agent (A2A) is an integration protocol that allows AI agents to communicate directly with each other and with third-party software without a human logging in. Salesboom's AMS deploys A2A-enabled sourcing agents that find, vet, and add leads, opportunities, employees, contractors, skills, and other agents to your CRM. <strong>Salesboom is Canada's first CRM with published A2A capability.</strong></p></details></div>
     </div>
