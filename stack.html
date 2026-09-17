@@ -74,6 +74,10 @@ body { padding-block: 0; }
 .pillar-desc { font-size: 14px; color: var(--text-2); line-height: 1.65; margin-bottom: 10px; }
 .pillar-fact { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--text-2); line-height: 1.5; }
 .pillar-fact::before { content: '→'; color: var(--blue); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+.delivery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+.delivery-item { background: rgba(0,60,120,.04); border: 1px solid rgba(0,60,120,.10); border-radius: 4px; padding: 11px 13px; }
+.delivery-name { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--green); margin-bottom: 5px; }
+.delivery-desc { font-size: 12.5px; color: var(--text-2); line-height: 1.5; }
 .pillar-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .pillar-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; background: rgba(0,60,120,.07); color: var(--blue); border: 1px solid rgba(0,60,120,.12); }
 .pillar-tag.tag-green { background: rgba(0,120,60,.07); color: #00783C; border-color: rgba(0,120,60,.15); }
@@ -396,11 +400,25 @@ body { padding-block: 0; }
             <div class="pillar-body">
               <div class="pillar-name">Professional Services</div>
               <div class="pillar-subtitle">Domestic Delivery Model</div>
-              <p class="pillar-desc">Four delivery models serve different implementation requirements and timelines — all executed by Salesboom's Halifax-based team, not contracted out to a partner network with its own overhead and quality variance.</p>
-              <div class="pillar-fact"><strong>Canadian Fast Track:</strong> Rapid onboarding and role-based configuration delivered by Canadian implementation specialists using pre-configured industry vertical templates, shortening time-to-value.</div>
-              <div class="pillar-fact"><strong>Built-to-Suit Customization:</strong> Schema, workflow, and UI modifications engineered around existing enterprise operating practices — the platform adapts to the organization, not the reverse.</div>
-              <div class="pillar-fact"><strong>People-as-a-Service (PaaS):</strong> Fractional Canadian software developers, systems architects, and administrators integrated into customer teams for ongoing workflow maintenance and custom development.</div>
-              <div class="pillar-fact"><strong>CRM Concierge Support:</strong> Direct executive-level access and dedicated support engineers ensuring system performance, data continuity, and long-term organizational adoption.</div>
+              <p class="pillar-desc">Four delivery models — all executed by Salesboom's Halifax-based team, not contracted out to a partner network with its own overhead and quality variance.</p>
+              <div class="delivery-grid">
+                <div class="delivery-item">
+                  <div class="delivery-name">Canadian Fast Track</div>
+                  <div class="delivery-desc">Rapid onboarding using pre-configured industry vertical templates, shortening time-to-value.</div>
+                </div>
+                <div class="delivery-item">
+                  <div class="delivery-name">Built-to-Suit</div>
+                  <div class="delivery-desc">Schema, workflow, and UI modifications engineered around your operating practices — the platform adapts to you.</div>
+                </div>
+                <div class="delivery-item">
+                  <div class="delivery-name">People as a Service</div>
+                  <div class="delivery-desc">Fractional Canadian developers, architects, and administrators embedded in your team for ongoing development.</div>
+                </div>
+                <div class="delivery-item">
+                  <div class="delivery-name">CRM Concierge</div>
+                  <div class="delivery-desc">Direct executive-level access and dedicated support engineers for system performance and long-term adoption.</div>
+                </div>
+              </div>
               <div class="pillar-tags">
                 <span class="pillar-tag">Fast Track</span>
                 <span class="pillar-tag">Built-to-Suit</span>
