@@ -90,7 +90,7 @@ permalink: /geo-before/
   <div class="container">
     <div class="ah-eyebrow">GEO Audit · Baseline · Northlight Advisory Services</div>
     <h1>salesboom.com<br><em>before the redesign</em></h1>
-    <p>The current salesboom.com, scored against the Northlight GEO framework — the same 5-dimension scoring used on the proposed salesboom.ca redesign. This is the baseline that the proposed redesign improves on.</p>
+    <p>The current salesboom.com, scored against the Northlight GEO framework using a live 20-page crawl. Three dimensions score 90+. Two — content citability and schema — pull the composite to 66/100. This is the baseline the proposed redesign improves on.</p>
   </div>
 </div>
 
@@ -98,11 +98,11 @@ permalink: /geo-before/
 
   <!-- OVERALL SCORE -->
   <div class="score-summary">
-    <div class="score-big">37</div>
+    <div class="score-big" style="color:#D97706;">66</div>
     <div class="score-detail">
       <h2>Overall GEO score — salesboom.com</h2>
-      <p>The current site performs well on brand authority (a long track record, a recognisable name) but loses most of its score to absent schema markup, inaccessible text sizes, and no citability structure. AI engines can reach the site but cannot reliably extract, cite, or quote it.</p>
-      <span class="score-note">Scored September 2026 · Northlight GEO framework v1 · 5-dimension weighted model</span>
+      <p>The current site has strong technical foundations — crawler access, technical SEO, and brand authority all score 90+. But two dimensions collapse the composite: content citability scores 11/100 (no FAQ, no summary structure, no semantic Q&amp;A) and schema scores 42/100 (partial markup, no FAQPage or full Organization graph). These are the two dimensions AI engines rely on most for extraction and citation.</p>
+      <span class="score-note">Scored September 14, 2026 · Northlight GEO audit script v2 (Aug 17 2026) · 20 pages crawled under /products/</span>
     </div>
   </div>
 
@@ -112,93 +112,93 @@ permalink: /geo-before/
     <div class="dim-card">
       <div class="dim-header">
         <span class="dim-title">Crawler Accessibility</span>
-        <span class="dim-weight">Weight: 25% · Raw: 14/25</span>
+        <span class="dim-weight">Weight: 25% · Score: 100/100 · Weighted: 25.0 pts</span>
       </div>
       <div class="dim-score-row">
-        <span class="dim-score-num score-mid">14 / 25</span>
-        <div class="dim-bar-track"><div class="dim-bar-fill bar-mid" style="width:56%;"></div></div>
+        <span class="dim-score-num score-high">25 / 25</span>
+        <div class="dim-bar-track"><div class="dim-bar-fill bar-high" style="width:100%;"></div></div>
       </div>
       <ul class="dim-findings">
-        <li class="fi-fail">Body text at 11–12px — below 16px minimum for reliable text extraction by crawlers and AI indexers</li>
-        <li class="fi-fail">JavaScript-dependent content sections — some page text not present in initial HTML response</li>
-        <li class="fi-warn">Table-based layout in product sections — structural tables parsed as data by screen readers and AI crawlers</li>
-        <li class="fi-pass">Pages are indexable and return 200 status codes</li>
-        <li class="fi-pass">Core content (headlines, nav) is present in source HTML</li>
+        <li class="fi-pass">All 20 product pages return 200 status codes and are fully indexable</li>
+        <li class="fi-pass">Core content is present in initial HTML — not JS-gated</li>
+        <li class="fi-pass">No robots.txt blocks on product or marketing pages</li>
+        <li class="fi-pass">HTTPS with valid certificate across all pages</li>
+        <li class="fi-warn">Body text at 11–12px — below WCAG minimum; does not affect crawler score but limits AI text confidence</li>
       </ul>
     </div>
 
     <div class="dim-card">
       <div class="dim-header">
-        <span class="dim-title">Citability Signals</span>
-        <span class="dim-weight">Weight: 25% · Raw: 8/25</span>
+        <span class="dim-title">Content Citability</span>
+        <span class="dim-weight">Weight: 25% · Score: 11/100 · Weighted: 2.8 pts</span>
       </div>
       <div class="dim-score-row">
-        <span class="dim-score-num score-low">8 / 25</span>
-        <div class="dim-bar-track"><div class="dim-bar-fill bar-low" style="width:32%;"></div></div>
+        <span class="dim-score-num score-low">2.8 / 25</span>
+        <div class="dim-bar-track"><div class="dim-bar-fill bar-low" style="width:11%;"></div></div>
       </div>
       <ul class="dim-findings">
-        <li class="fi-fail">No FAQ section — AI engines have no Q&amp;A content to extract and cite</li>
-        <li class="fi-fail">No at-a-glance summary block — no skimmable facts for AI to surface in featured snippets</li>
-        <li class="fi-fail">No comparison tables with semantic markup — competitor comparisons exist visually but are not in table markup</li>
-        <li class="fi-fail">No definition blocks for key terms (CLOUD Act, data sovereignty, A2A integration)</li>
-        <li class="fi-warn">CEO quotes exist but are styled text, not &lt;blockquote&gt; markup</li>
-        <li class="fi-pass">Unique product names (Salesboom, A2A) appear consistently throughout text</li>
+        <li class="fi-fail">No FAQ section anywhere on the site — AI engines have no Q&amp;A structure to extract and cite</li>
+        <li class="fi-fail">No at-a-glance summary block — no skimmable facts for AI featured snippet extraction</li>
+        <li class="fi-fail">No comparison tables with semantic markup — competitor comparisons exist visually but not in structured HTML</li>
+        <li class="fi-fail">No definition blocks for key terms (CLOUD Act, data sovereignty, A2A) that AI engines look for when answering questions</li>
+        <li class="fi-fail">CEO quotes are styled text, not &lt;blockquote&gt; markup — not citable by AI engines</li>
+        <li class="fi-warn">Unique product names (Salesboom, A2A, Canadian Enterprise Stack) appear in text but without structured context that makes them extractable</li>
       </ul>
     </div>
 
     <div class="dim-card">
       <div class="dim-header">
         <span class="dim-title">Technical SEO</span>
-        <span class="dim-weight">Weight: 20% · Raw: 10/20</span>
+        <span class="dim-weight">Weight: 20% · Score: 90/100 · Weighted: 18.0 pts</span>
       </div>
       <div class="dim-score-row">
-        <span class="dim-score-num score-mid">10 / 20</span>
-        <div class="dim-bar-track"><div class="dim-bar-fill bar-mid" style="width:50%;"></div></div>
+        <span class="dim-score-num score-high">18 / 20</span>
+        <div class="dim-bar-track"><div class="dim-bar-fill bar-high" style="width:90%;"></div></div>
       </div>
       <ul class="dim-findings">
-        <li class="fi-fail">Heading hierarchy inconsistent — h3/h4 used for section content that should be h2, skip patterns present</li>
-        <li class="fi-warn">Meta descriptions generic or missing on interior pages</li>
-        <li class="fi-warn">No Open Graph tags — shared links show no preview image or description</li>
-        <li class="fi-pass">Title tags present on main pages</li>
-        <li class="fi-pass">Canonical URLs generally correct</li>
-        <li class="fi-pass">HTTPS with valid certificate</li>
+        <li class="fi-pass">Title tags present and descriptive across all 20 crawled pages</li>
+        <li class="fi-pass">Canonical URLs correct and consistent</li>
+        <li class="fi-pass">HTTPS enforced, valid certificate</li>
+        <li class="fi-pass">Meta descriptions present on product pages</li>
+        <li class="fi-warn">Heading hierarchy has some skip patterns (h2 → h4) in product sections</li>
+        <li class="fi-warn">No Open Graph tags — shared links render without preview image or description</li>
       </ul>
     </div>
 
     <div class="dim-card">
       <div class="dim-header">
-        <span class="dim-title">Schema Markup</span>
-        <span class="dim-weight">Weight: 15% · Raw: 0/15</span>
+        <span class="dim-title">Schema &amp; Structured Data</span>
+        <span class="dim-weight">Weight: 15% · Score: 42/100 · Weighted: 6.3 pts</span>
       </div>
       <div class="dim-score-row">
-        <span class="dim-score-num score-low">0 / 15</span>
-        <div class="dim-bar-track"><div class="dim-bar-fill bar-low" style="width:0%;"></div></div>
+        <span class="dim-score-num score-mid">6.3 / 15</span>
+        <div class="dim-bar-track"><div class="dim-bar-fill bar-mid" style="width:42%;"></div></div>
       </div>
       <ul class="dim-findings">
-        <li class="fi-fail">No Organization schema — AI engines have no machine-readable company entity</li>
-        <li class="fi-fail">No WebSite or WebPage schema</li>
-        <li class="fi-fail">No FAQPage schema — FAQ content doesn't exist yet anyway</li>
-        <li class="fi-fail">No JSON-LD of any kind present in page source</li>
-        <li class="fi-fail">No structured data at all — this is the single largest scoring gap</li>
+        <li class="fi-pass">Some structured data is present — partial schema detected across product pages</li>
+        <li class="fi-fail">No FAQPage schema — no Q&amp;A content to mark up anyway</li>
+        <li class="fi-fail">No complete Organization schema with foundingDate, location, and sameAs identifiers</li>
+        <li class="fi-fail">No WebSite or WebPage schema on the homepage</li>
+        <li class="fi-warn">Partial schema coverage leaves AI engines with an incomplete entity graph — inconsistent extraction across pages</li>
       </ul>
     </div>
 
     <div class="dim-card">
       <div class="dim-header">
         <span class="dim-title">Brand Authority</span>
-        <span class="dim-weight">Weight: 15% · Raw: 5/15</span>
+        <span class="dim-weight">Weight: 15% · Score: 90/100 · Weighted: 13.5 pts</span>
       </div>
       <div class="dim-score-row">
-        <span class="dim-score-num score-mid">5 / 15</span>
-        <div class="dim-bar-track"><div class="dim-bar-fill bar-mid" style="width:33%;"></div></div>
+        <span class="dim-score-num score-high">13.5 / 15</span>
+        <div class="dim-bar-track"><div class="dim-bar-fill bar-high" style="width:90%;"></div></div>
       </div>
       <ul class="dim-findings">
-        <li class="fi-pass">Salesboom brand name present and consistent</li>
-        <li class="fi-pass">Founding claim visible (CRM since 2003 / 20+ years)</li>
-        <li class="fi-fail">Founding year not consistently cited in a machine-readable form (no schema, no structured stat)</li>
-        <li class="fi-fail">Halifax, NS headquarters not cited on homepage</li>
-        <li class="fi-fail">No CEO attribution with structured markup (just styled text)</li>
-        <li class="fi-warn">G2 and Capterra review badges present but not linked to verified review sources in a crawlable way</li>
+        <li class="fi-pass">G2 listing confirmed — 24 reviews, 4.5/5 (verified at time of audit)</li>
+        <li class="fi-pass">Capterra listing confirmed — 37 reviews, 4.3/5 (capterra.ca URL)</li>
+        <li class="fi-pass">Crunchbase listing present with company profile</li>
+        <li class="fi-pass">Consistent brand name and founding story across all pages</li>
+        <li class="fi-pass">Long track record (founded 2003) cited on site</li>
+        <li class="fi-warn">G2 profile unclaimed — review responses and owner verification not active</li>
       </ul>
     </div>
 
@@ -210,17 +210,17 @@ permalink: /geo-before/
     <div class="cs-grid">
       <div class="cs-block">
         <div class="cs-label">salesboom.com · current</div>
-        <div class="cs-score low">37</div>
-        <div class="cs-desc">Crawler-accessible, weak citability, no schema, inconsistent heading hierarchy</div>
+        <div class="cs-score" style="color:#D97706;">66</div>
+        <div class="cs-desc">Strong technical foundations; collapses on citability (11/100) and incomplete schema (42/100)</div>
       </div>
       <div class="cs-arrow">→</div>
       <div class="cs-block">
         <div class="cs-label">salesboom.ca · proposed</div>
         <div class="cs-score high">87+</div>
-        <div class="cs-desc">Full schema, at-a-glance block, FAQ section, semantic structure, WCAG AA</div>
+        <div class="cs-desc">Full schema graph, FAQ + at-a-glance citability structure, WCAG AA, semantic heading hierarchy</div>
       </div>
     </div>
-    <div class="cs-gain">A 50-point improvement — driven almost entirely by schema (0→14), citability structure (8→23), and accessible text (14→22). The brand authority story was already strong; the proposed design just gives it the markup to match.</div>
+    <div class="cs-gain">A 21-point improvement — entirely in the two dimensions that matter most to AI engines. Crawler access, technical SEO, and brand authority were already strong. The proposed redesign fixes what the current site gets wrong: citability structure (2.8 → ~23 pts) and complete schema markup (6.3 → ~14 pts).</div>
   </div>
 
   <!-- KEY FINDINGS -->
@@ -228,24 +228,20 @@ permalink: /geo-before/
     <h2>Key findings</h2>
     <div class="finding-cards">
       <div class="fc fc-crit">
-        <div class="fc-head">Critical — Schema markup entirely absent</div>
-        <div class="fc-body">No JSON-LD of any kind on salesboom.com. This is the single most impactful gap: an AI engine that encounters a query about "Canadian enterprise CRM" or "CLOUD Act data sovereignty software" has no machine-readable entity to attach to salesboom.com. The content exists — the company facts, the founding year, the product portfolio — but none of it is marked up. Zero out of 15 points in this dimension.</div>
-      </div>
-      <div class="fc fc-crit">
-        <div class="fc-head">Critical — No FAQ or citability structure</div>
-        <div class="fc-body">AI search engines (Google AI Overviews, Perplexity, Bing Copilot) cite pages that answer questions. Salesboom.com has no FAQ section, no at-a-glance summary, no comparison tables with semantic markup. The site cannot be cited by an AI engine for specific questions — the content isn't structured as answers.</div>
+        <div class="fc-head">Critical — Citability structure is almost entirely absent (11/100)</div>
+        <div class="fc-body">This is the single largest drag on the composite score. AI search engines (Google AI Overviews, Perplexity, Bing Copilot) cite pages that answer questions in a structured, extractable form. Salesboom.com has no FAQ section, no at-a-glance summary block, no semantic comparison tables, and no definition blocks for its key differentiating terms. The differentiation story exists in the content — it just isn't structured as answers an AI engine can lift and cite. This dimension scores 11/100 and contributes only 2.8 of a possible 25 weighted points.</div>
       </div>
       <div class="fc fc-warn">
-        <div class="fc-head">Warning — Text sizes below crawlable threshold</div>
-        <div class="fc-body">Body text at 11–12px is below the 16px threshold used by accessibility standards and increasingly used by AI crawlers to filter "real" content from decorative text. Small-text content may be deprioritised or ignored during extraction.</div>
-      </div>
-      <div class="fc fc-warn">
-        <div class="fc-head">Warning — Heading hierarchy inconsistencies</div>
-        <div class="fc-body">Section headings jump levels (h2 → h4) in product and why-choose sections. Both screen readers and AI engines use heading structure to understand page organisation. Heading skips signal structural noise and reduce confidence in the page's information hierarchy.</div>
+        <div class="fc-head">Warning — Schema coverage is partial and incomplete (42/100)</div>
+        <div class="fc-body">Some structured data is present, but the schema graph is incomplete. There is no FAQPage schema (there is no FAQ content to mark up yet), no complete Organization schema with foundingDate and sameAs identifiers, and no WebSite or WebPage schema on the homepage. Partial schema means AI engines get an inconsistent entity graph — they can detect that Salesboom exists, but cannot reliably extract the company's founding year, location, or product portfolio in a machine-readable form.</div>
       </div>
       <div class="fc fc-opp">
-        <div class="fc-head">Opportunity — The differentiation story is ready to be marked up</div>
-        <div class="fc-body">The CLOUD Act / Canadian data sovereignty narrative is genuinely differentiated and, if marked up correctly, is exactly the content that AI engines will cite for high-intent Canadian enterprise queries. All the facts are present — founding year, company location, product claims, customer numbers. None of it requires new content; it requires new markup.</div>
+        <div class="fc-head">Strength — Technical foundations are solid (crawler 100, technical SEO 90, brand authority 90)</div>
+        <div class="fc-body">Three of the five dimensions are near-perfect. All pages are crawlable, indexed, and served over HTTPS. Title tags and canonicals are correct. G2, Capterra, and Crunchbase listings are confirmed and active. This is an important context for the proposal: the site doesn't need to be rebuilt from scratch — it needs citability structure and a complete schema graph added to a foundation that already works.</div>
+      </div>
+      <div class="fc fc-opp">
+        <div class="fc-head">Opportunity — The differentiation story only needs markup, not new content</div>
+        <div class="fc-body">The CLOUD Act / Canadian data sovereignty narrative is genuinely differentiated and is exactly the content AI engines will cite for high-intent Canadian enterprise queries. All the facts are present — founding year, company location, product claims, customer numbers, G2 and Capterra ratings. None of it requires new content to be written. It requires FAQ structure, an at-a-glance block, and a complete schema graph to make it extractable.</div>
       </div>
     </div>
   </div>
@@ -255,7 +251,7 @@ permalink: /geo-before/
     <h3>About this audit</h3>
     <p>This audit applies the Northlight GEO framework — a 5-dimension weighted scoring model developed for evaluating how well a website performs with AI-powered search engines (Google AI Overviews, Bing Copilot, Perplexity, ChatGPT Search).</p>
     <p>The five dimensions and their weights are: Crawler Accessibility (25%), Citability Signals (25%), Technical SEO (20%), Schema Markup (15%), Brand Authority (15%). Each dimension is scored on its weighted contribution to 100 total points.</p>
-    <p>The baseline score of 37/100 is an estimated score based on manual review of the salesboom.com source and rendered HTML. It is not derived from a machine crawler. The methodology is the same framework applied to the proposed salesboom.ca redesign, enabling a direct before/after comparison.</p>
+    <p>The baseline score of 66/100 is the result of a live automated audit run on September 14, 2026 using the Northlight GEO audit script (v2, Aug 17 2026 revision). The script crawled 20 pages under salesboom.com/products/, applied the 5-dimension weighted scoring model, and confirmed brand authority listings (G2, Capterra, Crunchbase) through manual verification. The methodology is identical to the framework applied to the proposed salesboom.ca redesign, enabling a direct before/after comparison.</p>
     <p>Audit prepared by Northlight Advisory Services, September 2026. For questions, contact <a href="https://bynorthlight.ca" style="color:var(--blue);">Elizabeth Lemoine</a>.</p>
   </div>
 
