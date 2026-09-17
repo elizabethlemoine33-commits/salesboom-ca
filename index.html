@@ -108,7 +108,7 @@ schema: |
 <style>
 /* ══ HERO ══ */
 .hero { background: var(--bg); padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
-.hero-inner { display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: center; }
+.hero-inner { display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: stretch; margin-top: 24px; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .11em; text-transform: uppercase;
@@ -176,7 +176,8 @@ schema: |
 .why-head-row h2 { font-family: 'Lora', serif; font-size: 34px; font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 14px; }
 .why-head-row h2 em { font-style: italic; font-weight: 300; color: var(--blue-light); }
 .why-head-row p { font-size: 15.5px; color: rgba(255,255,255,.72); max-width: 580px; margin: 0 auto; line-height: 1.65; }
-.why-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin-bottom: 40px; }
+.why-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; margin-bottom: 40px; }
+.compare-table-wrap { display: flex; flex-direction: column; justify-content: center; }
 .why-cards { display: flex; flex-direction: column; gap: 10px; }
 .why-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-left: 3px solid var(--blue-light); padding: 14px 16px; border-radius: 3px; }
 .why-card h3 { font-size: 13.5px; font-weight: 600; color: #fff; margin-bottom: 3px; }
@@ -184,9 +185,9 @@ schema: |
 .why-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--blue-light); margin-top: 20px; }
 .compare-table-wrap { overflow-x: auto; }
 .compare-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-.compare-table th { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .09em; text-transform: uppercase; font-weight: 500; color: rgba(255,255,255,.55); padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,.1); text-align: left; white-space: nowrap; }
+.compare-table th { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .09em; text-transform: uppercase; font-weight: 500; color: rgba(255,255,255,.55); padding: 13px 16px; border-bottom: 1px solid rgba(255,255,255,.1); text-align: left; white-space: nowrap; }
 .compare-table th:not(:first-child) { text-align: center; }
-.compare-table td { padding: 9px 16px; border-bottom: 1px solid rgba(255,255,255,.05); color: rgba(255,255,255,.72); vertical-align: middle; }
+.compare-table td { padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,.05); color: rgba(255,255,255,.72); vertical-align: middle; }
 .compare-table td:not(:first-child) { text-align: center; }
 .compare-table .th-salesboom { color: #fff !important; font-weight: 700; }
 .compare-table .yes  { color: #5ED08C; font-size: 15px; font-weight: 700; }
@@ -255,15 +256,13 @@ schema: |
 <!-- ══ HERO ══ -->
 <section class="hero" aria-label="Hero">
   <div class="container">
+    <div class="hero-badge">
+      <span class="hero-badge-dot" aria-hidden="true"></span>
+      Canadian-owned · Canadian-hosted · No US parent entity
+    </div>
+    <h1>Let Salespeople <em>Sell Again.</em></h1>
     <div class="hero-inner">
       <div>
-        <div class="hero-badge">
-          <span class="hero-badge-dot" aria-hidden="true"></span>
-          Canadian-owned · Canadian-hosted · No US parent entity
-        </div>
-
-        <h1>Let Salespeople <em>Sell Again.</em></h1>
-
         <div class="at-a-glance" aria-label="At a glance">
           <div class="at-a-glance-label">At a glance</div>
           <ul>
