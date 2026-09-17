@@ -12,7 +12,7 @@ body { padding-block: 0; }
 .page-header { background: var(--navy); padding: 52px 24px 36px; }
 .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.50); margin-bottom: 10px; }
 .page-title { font-family: 'Lora', serif; font-size: 32px; font-weight: 700; color: #fff; line-height: 1.12; margin-bottom: 8px; text-wrap: balance; }
-.page-title em { font-style: italic; font-weight: 300; color: #5080C8; }
+.page-title em { font-style: italic; font-weight: 600; color: #F05A00; }
 .page-subtitle { font-size: 15px; color: rgba(255,255,255,.68); max-width: 600px; line-height: 1.65; margin-top: 10px; }
 
 /* ══ STACK METRICS ROW ══ */
@@ -81,13 +81,17 @@ body { padding-block: 0; }
 .deploy-table .partial-cell { color: #F05A00; font-size: 12px; }
 .deploy-table .no-cell { color: var(--muted); font-size: 12px; }
 
-/* ══ FAQ ══ */
+/* ══ FAQ ACCORDION ══ */
 .faq-section { margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--border); }
 .faq-section-head { font-family: 'Lora', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
-.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
 .faq-item:last-child { border-bottom: none; }
-.faq-q { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
-.faq-a { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+.faq-item summary { list-style: none; cursor: pointer; padding: 18px 0; display: flex; justify-content: space-between; align-items: start; gap: 16px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.4; user-select: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; font-family: 'DM Mono', monospace; font-size: 18px; font-weight: 400; color: var(--blue); flex-shrink: 0; margin-top: -1px; transition: transform .2s; }
+.faq-item[open] summary::after { content: '−'; }
+.faq-item summary:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 2px; }
+.faq-a { font-size: 14px; color: var(--text-2); line-height: 1.72; padding: 0 0 18px; }
 
 /* ══ PAGE CTA ══ */
 .page-cta { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 28px; margin-top: 40px; text-align: center; }
@@ -395,30 +399,30 @@ body { padding-block: 0; }
   <div class="faq-section" aria-label="Frequently asked questions">
     <h2 class="faq-section-head">Frequently Asked Questions</h2>
 
-    <div class="faq-item">
-      <div class="faq-q">What is the Canadian Enterprise Stack?</div>
+    <details class="faq-item">
+      <summary>What is the Canadian Enterprise Stack?</summary>
       <div class="faq-a">The Canadian Enterprise Stack is Salesboom's ten-pillar enterprise platform: Revenue Engine (CRM + GTM + RevOps), Integration Station (middleware OS), Data Engine (MDM), AMS (Agent Management System), Context Engine (contextual intelligence), Demandinator (demand generation), Promptuit (prompt management), Content Relationship Management, and the implementation services layer — Fast Track, Built to Suit, and People as a Service. Each pillar was built in-house by Salesboom's Halifax team and deploys independently or as a fully integrated system, hosted on 100% Canadian bare-metal infrastructure.</div>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q">What is Agent-to-Agent (A2A) and why does it matter for CRM?</div>
+    <details class="faq-item">
+      <summary>What is Agent-to-Agent (A2A) and why does it matter for CRM?</summary>
       <div class="faq-a">Agent-to-Agent (A2A) is a protocol that allows AI agents to communicate directly with each other and with third-party software systems — without a human logging in as an intermediary for each step. In a CRM context, A2A means a sourcing agent can identify a qualified prospect in one system, check availability in a calendar system, create a lead record in Salesboom's Revenue Engine, and notify a sales rep — all without a human manually moving data between systems. Salesboom's AMS is Canada's first CRM with published A2A capability. Human-in-the-loop approval is required before any record is added to the CRM; the agents propose, the team decides.</div>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q">Can the Canadian Enterprise Stack work alongside Salesforce or HubSpot?</div>
+    <details class="faq-item">
+      <summary>Can the Canadian Enterprise Stack work alongside Salesforce or HubSpot?</summary>
       <div class="faq-a">Yes. Integration Station is designed for exactly this. Salesboom can operate headless — as a sovereign CRM layer, AI infrastructure, or demand-generation engine — connected to your existing Salesforce, HubSpot, Microsoft Dynamics, or Pipedrive instance via API, MCP, and A2A. You keep the system your team already uses; you add Canadian data sovereignty, agentic AI infrastructure, and RevOps capability on top of it, without a forced migration or a parallel data-entry problem.</div>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q">What does People as a Service include that a typical managed services contract does not?</div>
+    <details class="faq-item">
+      <summary>What does People as a Service include that a typical managed services contract does not?</summary>
       <div class="faq-a">A typical managed services contract delivers defined outputs from an anonymous service team: tickets resolved, reports produced, uptime maintained. People as a Service delivers embedded specialists — named individuals with specific skills (developer, system architect, CRM administrator, data analyst, marketing operations specialist) — who work inside your organization for the duration of the engagement, with defined accountability for outcomes rather than activities. The difference is between renting capacity and embedding a cross-functional team that owns results.</div>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q">How long does a Fast Track implementation take, and what does it cover?</div>
+    <details class="faq-item">
+      <summary>How long does a Fast Track implementation take, and what does it cover?</summary>
       <div class="faq-a">Fast Track implementations run 4–8 weeks from kickoff to go-live. The scope covers Revenue Engine configuration (fields, layouts, workflows, and reports tailored to your sales process), data migration from your existing CRM or spreadsheet, user training for your team, and go-live support through the first 30 days. Fast Track is the right path when requirements are clear, the data to be migrated is reasonably clean, and the team has capacity to engage during the implementation window. Complex integrations, custom development, or multi-department deployments are scoped as Built to Suit engagements instead.</div>
-    </div>
+    </details>
   </div>
 
   <!-- PAGE CTA -->
