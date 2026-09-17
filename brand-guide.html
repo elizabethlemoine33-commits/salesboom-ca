@@ -455,4 +455,121 @@ permalink: /brand-guide/
     </table>
   </div>
 
+  <hr class="section-rule">
+
+  <!-- CONTENT RULES -->
+  <div class="bg-section" style="margin-top:52px;" id="content-rules">
+    <h2>Content <em>Standards</em></h2>
+    <p>Every page on this site is built to a set of content structure rules derived from GEO (Generative Engine Optimisation) research. These rules make pages citable by AI search engines, scannable by human readers, and consistently structured across the site. They are not optional — they apply to every new page, and Troy's team should apply them when updating existing content.</p>
+
+    <style>
+      .cr-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+      .cr-rule { background: var(--bg-alt); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 0 4px 4px 0; padding: 18px 20px; }
+      .cr-rule-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+      .cr-rule-num { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600; color: var(--blue); min-width: 24px; }
+      .cr-rule-title { font-size: 15px; font-weight: 700; color: var(--text); }
+      .cr-rule-badge { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; background: rgba(0,60,120,.08); color: var(--blue); border: 1px solid rgba(0,60,120,.15); }
+      .cr-rule-badge.required { background: rgba(240,90,0,.08); color: #F05A00; border-color: rgba(240,90,0,.2); }
+      .cr-rule p { font-size: 14px; color: var(--text-2); line-height: 1.65; margin-bottom: 8px; }
+      .cr-rule p:last-child { margin-bottom: 0; }
+      .cr-rule code { font-family: 'DM Mono', monospace; font-size: 12px; background: rgba(0,30,60,.06); padding: 1px 5px; border-radius: 3px; color: var(--text); }
+      .cr-why { font-size: 13px; color: var(--muted); margin-top: 6px; }
+      .cr-why strong { color: var(--text-2); font-weight: 600; }
+    </style>
+
+    <div class="cr-grid">
+
+      <div class="cr-rule">
+        <div class="cr-rule-head">
+          <span class="cr-rule-num">01</span>
+          <span class="cr-rule-title">At-a-glance block — first element on the page</span>
+          <span class="cr-rule-badge required">Required</span>
+        </div>
+        <p>Every page must open with an at-a-glance block: a small bordered panel with 3–5 one-sentence bullets that summarize the page's key claims. It sits before the first paragraph, immediately after the page header.</p>
+        <p class="cr-why"><strong>Why:</strong> AI search engines (ChatGPT, Perplexity, Claude, Google AI Overviews) pull from the first few hundred tokens of a page. A dense, structured summary at the top dramatically increases the probability of citation. Human readers also scan it first — it tells them whether to keep reading.</p>
+      </div>
+
+      <div class="cr-rule">
+        <div class="cr-rule-head">
+          <span class="cr-rule-num">02</span>
+          <span class="cr-rule-title">H2 headings phrased as questions</span>
+          <span class="cr-rule-badge required">Required</span>
+        </div>
+        <p>Section headings at the <code>h2</code> level must be written as the questions a reader or AI model would ask. "What is Canadian data sovereignty?" not "Data sovereignty explained." Questions match the way AI models query content and the way humans type searches.</p>
+        <p class="cr-why"><strong>Why:</strong> AI engines are optimized to find pages that answer questions. A heading phrased as a question is directly extractable as a question-answer pair — the foundation of a FAQPage schema match and an AI Overview answer.</p>
+      </div>
+
+      <div class="cr-rule">
+        <div class="cr-rule-head">
+          <span class="cr-rule-num">03</span>
+          <span class="cr-rule-title">Answer-block after every H2</span>
+          <span class="cr-rule-badge required">Required</span>
+        </div>
+        <p>Every <code>h2</code> section heading must be followed immediately by an answer-block: a 1–3 sentence direct answer in a lightly styled container (left border, soft background). The answer-block comes before the detailed body paragraphs for that section.</p>
+        <p class="cr-why"><strong>Why:</strong> The answer-block creates a Q&amp;A signal that AI search engines can extract without reading the full paragraph. This is the single highest-value citability pattern — it tells the model exactly what the section says before asking it to read the explanation.</p>
+      </div>
+
+      <div class="cr-rule">
+        <div class="cr-rule-head">
+          <span class="cr-rule-num">04</span>
+          <span class="cr-rule-title">FAQ section at the bottom of every page</span>
+          <span class="cr-rule-badge required">Required</span>
+        </div>
+        <p>Every page must close with a FAQ section containing 4–6 question-and-answer pairs. Questions should be phrased as a reader (or AI model) would search for them. The FAQ corresponds directly to a <code>FAQPage</code> JSON-LD schema block in the page's front matter.</p>
+        <p class="cr-why"><strong>Why:</strong> FAQPage schema is one of the few structured data types that Google and AI search engines both extract explicitly for answer panels. It creates citable Q&amp;A pairs that can be surfaced without a click — increasing brand visibility even when the searcher doesn't visit the page.</p>
+      </div>
+
+      <div class="cr-rule">
+        <div class="cr-rule-head">
+          <span class="cr-rule-num">05</span>
+          <span class="cr-rule-title">Comparison tables for feature and policy comparisons</span>
+          <span class="cr-rule-badge">Recommended</span>
+        </div>
+        <p>When comparing Salesboom against competitors, or comparing policy options (e.g. data residency vs. data sovereignty), use a semantic <code>&lt;table&gt;</code> with <code>&lt;th scope="col"&gt;</code> headers and proper <code>&lt;thead&gt;</code>/<code>&lt;tbody&gt;</code> structure. Never use a visual grid of divs for tabular comparison data.</p>
+        <p class="cr-why"><strong>Why:</strong> Structured tables are extractable by AI engines as comparison data. A visual grid is invisible to a crawler. Comparison tables also serve as high-value, low-effort citability content — they answer "how does X compare to Y" directly.</p>
+      </div>
+
+      <div class="cr-rule">
+        <div class="cr-rule-head">
+          <span class="cr-rule-num">06</span>
+          <span class="cr-rule-title">Stat/metric rows for key numbers</span>
+          <span class="cr-rule-badge">Recommended</span>
+        </div>
+        <p>Key statistics (founding year, years in operation, number of industry editions, hosting jurisdiction) should be surfaced in a dedicated visual stat row near the top of relevant pages — not buried in body paragraphs. Use large, legible numbers with short labels.</p>
+        <p class="cr-why"><strong>Why:</strong> Specific numbers are highly citable. "Founded 2003, 100% Canadian hosting, 200+ industry editions" is the kind of verifiable fact an AI model cites as evidence — a paragraph that mentions the same facts in prose is much harder to extract.</p>
+      </div>
+
+      <div class="cr-rule">
+        <div class="cr-rule-head">
+          <span class="cr-rule-num">07</span>
+          <span class="cr-rule-title">Definition paragraph for key proprietary terms</span>
+          <span class="cr-rule-badge">Recommended</span>
+        </div>
+        <p>The first time a proprietary term appears on a page (Canadian Enterprise Stack, AMS, A2A, Revenue Engine, etc.), define it in a single sentence that can stand alone. Do not assume the reader has seen it defined elsewhere on the site.</p>
+        <p class="cr-why"><strong>Why:</strong> AI models build entity understanding from page-level definitions. If your term is only defined once — on the homepage — it won't be part of the entity graph that links your other pages. Repeating a definition on each page that uses the term is redundant for humans but essential for machine comprehension.</p>
+      </div>
+
+      <div class="cr-rule">
+        <div class="cr-rule-head">
+          <span class="cr-rule-num">08</span>
+          <span class="cr-rule-title">Positive, pro-Canada framing throughout</span>
+          <span class="cr-rule-badge required">Required</span>
+        </div>
+        <p>All copy leads with what Salesboom <em>is</em> and what Canadian law <em>requires</em>, not what US competitors lack. Competitive comparisons belong in comparison tables — not in the primary narrative. The phrase "unlike US-based competitors" is explicitly prohibited outside of table context.</p>
+        <p class="cr-why"><strong>Why:</strong> Positive framing is a brand standard confirmed by the client. It also produces better AI citability — a page making confident affirmative claims about its subject is extracted as an authority; a page that leads with competitor criticism is harder to cite credibly. Troy's direct customers are Canadian businesses who want to comply with Canadian law — the obligation framing resonates more than the competitive threat framing.</p>
+      </div>
+
+      <div class="cr-rule">
+        <div class="cr-rule-head">
+          <span class="cr-rule-num">09</span>
+          <span class="cr-rule-title">Verbatim quotes preserved exactly</span>
+          <span class="cr-rule-badge required">Required</span>
+        </div>
+        <p>Direct quotations — including Troy Muise's blockquote on the homepage — must be reproduced verbatim. The number of years, the specific claim, the phrasing: do not paraphrase a person's own words. The "20+" rounding rule applies only to non-quote copy written about the company — not to anything in <code>&lt;blockquote&gt;</code> tags.</p>
+        <p class="cr-why"><strong>Why:</strong> A paraphrased quote is a fabrication. Troy said "23 years of continuous platform modernization." That is what the quote says. Marketing copy elsewhere says "20+ years" for longevity — those are two different things with two different rules.</p>
+      </div>
+
+    </div>
+  </div>
+
 </div>

@@ -1,0 +1,433 @@
+---
+layout: default
+title: "The Canadian Enterprise Stack — Salesboom"
+description: "Salesboom's ten-pillar enterprise platform: Revenue Engine, Integration Station, Data Engine, AMS, Demandinator, Promptuit, Content Relationship Management, Context Engine, and the implementation services layer — built and hosted in Canada since 2003."
+permalink: /stack/
+---
+
+<style>
+body { padding-block: 0; }
+
+/* ══ PAGE HEADER ══ */
+.page-header { background: var(--navy); padding: 52px 24px 36px; }
+.page-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.50); margin-bottom: 10px; }
+.page-title { font-family: 'Lora', serif; font-size: 32px; font-weight: 700; color: #fff; line-height: 1.12; margin-bottom: 8px; text-wrap: balance; }
+.page-title em { font-style: italic; font-weight: 300; color: #5080C8; }
+.page-subtitle { font-size: 15px; color: rgba(255,255,255,.68); max-width: 600px; line-height: 1.65; margin-top: 10px; }
+
+/* ══ STACK METRICS ROW ══ */
+.stack-metrics { background: var(--blue); }
+.stack-metrics-inner { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1060px; margin: 0 auto; }
+.smet-cell { padding: 20px; border-right: 1px solid rgba(255,255,255,.12); text-align: center; }
+.smet-cell:last-child { border-right: none; }
+.smet-num { font-family: 'Lora', serif; font-size: 26px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 4px; }
+.smet-label { font-size: 12px; color: rgba(255,255,255,.78); line-height: 1.35; }
+
+/* ══ PAGE BODY ══ */
+.page-body { max-width: 860px; margin: 0 auto; padding: 40px 24px 56px; }
+.nav-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 28px; text-decoration: none; }
+
+/* ══ AT A GLANCE ══ */
+.at-a-glance { background: rgba(0,60,120,.04); border: 1px solid rgba(0,60,120,.14); border-left: 3px solid var(--blue); border-radius: 4px; padding: 14px 18px; margin-bottom: 40px; }
+.at-a-glance-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+.at-a-glance ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; }
+.at-a-glance li { font-size: 14px; color: var(--text-2); padding-left: 16px; position: relative; line-height: 1.5; }
+.at-a-glance li::before { content: '→'; position: absolute; left: 0; color: var(--blue); font-size: 12px; top: 3px; }
+
+/* ══ INTRO ══ */
+.intro-block { margin-bottom: 48px; }
+.intro-block p { font-size: 15.5px; color: var(--text-2); line-height: 1.72; margin-bottom: 14px; }
+.intro-block strong { color: var(--text); font-weight: 600; }
+
+/* ══ LAYER SECTIONS ══ */
+.layer-section { margin-bottom: 52px; }
+.layer-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.layer-section > h2 { font-family: 'Lora', serif; font-size: 22px; font-weight: 700; color: var(--text); line-height: 1.25; margin-bottom: 6px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+.layer-section > h2 em { font-style: italic; font-weight: 300; color: var(--blue); }
+.layer-intro { font-size: 14.5px; color: var(--text-2); line-height: 1.7; margin-bottom: 20px; }
+
+/* ══ PILLAR CARDS ══ */
+.pillar-grid { display: flex; flex-direction: column; gap: 14px; }
+.pillar-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 20px 22px; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; }
+.pillar-card.pillar-service { border-top: 3px solid var(--green); }
+.pillar-card.pillar-crm { border-top: 3px solid var(--blue); }
+.pillar-card.pillar-ai { border-top: 3px solid #5080C8; }
+.pillar-card.pillar-gtm { border-top: 3px solid #F05A00; }
+.pillar-num { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 600; color: var(--muted); min-width: 28px; padding-top: 2px; font-variant-numeric: tabular-nums; }
+.pillar-body {}
+.pillar-name { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.pillar-subtitle { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.pillar-desc { font-size: 14px; color: var(--text-2); line-height: 1.65; margin-bottom: 10px; }
+.pillar-fact { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--text-2); line-height: 1.5; }
+.pillar-fact::before { content: '→'; color: var(--blue); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+.pillar-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.pillar-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; background: rgba(0,60,120,.07); color: var(--blue); border: 1px solid rgba(0,60,120,.12); }
+.pillar-tag.tag-green { background: rgba(0,120,60,.07); color: #00783C; border-color: rgba(0,120,60,.15); }
+.pillar-tag.tag-orange { background: rgba(240,90,0,.07); color: #F05A00; border-color: rgba(240,90,0,.15); }
+
+/* ══ DEPLOYMENT TABLE ══ */
+.deployment-section { margin-bottom: 48px; }
+.deployment-section h2 { font-family: 'Lora', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.deployment-section h2 em { font-style: italic; font-weight: 300; color: var(--blue); }
+.answer-block { background: rgba(0,60,120,.04); border: 1px solid rgba(0,60,120,.12); border-left: 3px solid var(--blue); border-radius: 0 4px 4px 0; padding: 14px 18px; margin-bottom: 18px; }
+.answer-block p { font-size: 15px; color: var(--text-2); line-height: 1.7; margin: 0; }
+.deploy-wrap { overflow-x: auto; margin: 18px 0; border: 1px solid var(--border); border-radius: 6px; }
+.deploy-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.deploy-table th { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .09em; text-transform: uppercase; font-weight: 500; color: var(--muted); padding: 11px 14px; background: var(--bg-alt); border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+.deploy-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text-2); }
+.deploy-table tr:last-child td { border-bottom: none; }
+.deploy-table td:first-child { font-weight: 600; color: var(--text); font-size: 13px; }
+.deploy-table .yes-cell { color: #00783C; font-weight: 600; font-size: 13px; }
+.deploy-table .partial-cell { color: #F05A00; font-size: 12px; }
+.deploy-table .no-cell { color: var(--muted); font-size: 12px; }
+
+/* ══ FAQ ══ */
+.faq-section { margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--border); }
+.faq-section-head { font-family: 'Lora', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
+.faq-a { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+
+/* ══ PAGE CTA ══ */
+.page-cta { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 28px; margin-top: 40px; text-align: center; }
+.page-cta h3 { font-family: 'Lora', serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.page-cta p { font-size: 14px; color: var(--text-2); margin-bottom: 20px; line-height: 1.6; }
+.page-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+  .stack-metrics-inner { grid-template-columns: repeat(2, 1fr); }
+  .pillar-card { grid-template-columns: 1fr; gap: 6px; }
+  .pillar-num { display: none; }
+  .page-title { font-size: 24px; }
+}
+</style>
+
+<!-- ══ PAGE HEADER ══ -->
+<div class="page-header">
+  <div style="max-width:860px;margin:0 auto;">
+    <div class="page-eyebrow">Canadian Enterprise CRM · Platform Overview</div>
+    <h1 class="page-title">The Canadian Enterprise Stack. <em>Built Here. Hosted Here.</em></h1>
+    <p class="page-subtitle">Ten pillars of enterprise CRM, revenue operations, AI infrastructure, and implementation services — engineered in Halifax, Nova Scotia, and deployed on 100% Canadian bare-metal infrastructure.</p>
+  </div>
+</div>
+
+<!-- ══ METRICS ROW ══ -->
+<div class="stack-metrics" aria-label="Stack at a glance">
+  <div class="stack-metrics-inner">
+    <div class="smet-cell"><div class="smet-num">10</div><div class="smet-label">Integrated platform pillars</div></div>
+    <div class="smet-cell"><div class="smet-num">200+</div><div class="smet-label">Vertical industry editions</div></div>
+    <div class="smet-cell"><div class="smet-num">20+</div><div class="smet-label">Years of continuous CRM development</div></div>
+    <div class="smet-cell"><div class="smet-num">100%</div><div class="smet-label">Canadian bare-metal hosting</div></div>
+  </div>
+</div>
+
+<!-- ══ PAGE BODY ══ -->
+<div class="page-body">
+  <a href="{{ site.url }}/" class="nav-back">← Back to overview</a>
+
+  <!-- AT A GLANCE -->
+  <div class="at-a-glance" aria-label="At a glance">
+    <div class="at-a-glance-label">At a glance</div>
+    <ul>
+      <li>The Canadian Enterprise Stack is Salesboom's unified ten-pillar platform — CRM, integration middleware, master data management, AI agent infrastructure, demand generation, and implementation services, all built in-house on Canadian soil</li>
+      <li>Each pillar deploys independently or as a fully integrated system — start with CRM, add sovereignty and AI infrastructure, or deploy the full stack from day one</li>
+      <li>Unlike assembled stacks built through acquisitions, every pillar in the Canadian Enterprise Stack was built and is maintained by the same Halifax team — no patchwork, no acquired middleware, no conflicting data models</li>
+    </ul>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro-block">
+    <p><strong>Most enterprise software stacks are assembled, not built.</strong> A CRM from one vendor, marketing automation from another, integration middleware from a third, AI tools from a fourth — each with its own data model, its own compliance posture, and its own support team. The Canadian Enterprise Stack is different: a single, in-house-built platform that spans the full revenue lifecycle from lead to customer to renewal, with AI infrastructure and data governance built in from the beginning.</p>
+    <p>Founded in Halifax in 2003 as Canada's first Cloud CRM vendor, Salesboom has spent over 20 years building rather than buying. The result is a platform where all pillars share one data model, one authentication layer, and one Canadian-hosted infrastructure — with no US hyperscaler in the chain, no CLOUD Act exposure, and no legacy acquisition debt to manage around.</p>
+  </div>
+
+  <!-- LAYER 1: CRM & REVOPS -->
+  <div class="layer-section">
+    <div class="layer-eyebrow">Layer 01 · Core CRM &amp; Revenue Operations</div>
+    <h2>Revenue Intelligence &amp; <em>Data Foundation</em></h2>
+    <p class="layer-intro">The core CRM and revenue operations layer is where customer relationships are built and measured. Two pillars provide the foundation: a unified revenue platform and a master data management engine that keeps every other pillar's data clean.</p>
+
+    <div class="pillar-grid" role="list">
+
+      <div class="pillar-card pillar-crm" role="listitem">
+        <div class="pillar-num">01</div>
+        <div class="pillar-body">
+          <div class="pillar-name">Revenue Engine</div>
+          <div class="pillar-subtitle">CRM · GTM · RevOps</div>
+          <p class="pillar-desc">The core of the Canadian Enterprise Stack. Revenue Engine unifies CRM (lead, account, contact, and opportunity management), go-to-market execution (campaign management, pipeline orchestration), and revenue operations (forecasting, analytics, quota and territory management) under a single login. Every vertical edition — from real estate to pharmaceuticals to government — is built on Revenue Engine.</p>
+          <div class="pillar-fact">Configurable without code: fields, layouts, workflows, and reports adapt to your process, not the reverse.</div>
+          <div class="pillar-fact">AI-assisted lead scoring, next-best-action recommendations, and natural-language reporting are built into the platform — not bolted on as a third-party add-on.</div>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Standalone</span>
+            <span class="pillar-tag">200+ editions</span>
+            <span class="pillar-tag">API + MCP</span>
+            <span class="pillar-tag tag-green">Canadian-hosted</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar-card pillar-crm" role="listitem">
+        <div class="pillar-num">02</div>
+        <div class="pillar-body">
+          <div class="pillar-name">Data Engine</div>
+          <div class="pillar-subtitle">Master Data Management</div>
+          <p class="pillar-desc">Enterprise data quality degrades at the source — duplicate records, inconsistent formatting, conflicting customer identifiers across systems. Data Engine is Salesboom's master data management (MDM) layer: it normalizes, deduplicates, and governs the customer record across every other pillar and every integrated system. Clean data is the prerequisite for reliable AI output; Data Engine provides it.</p>
+          <div class="pillar-fact">Deduplication and record-merge logic runs continuously — not as a quarterly cleanup project.</div>
+          <div class="pillar-fact">Governs the canonical customer record that AMS agents, Context Engine, and Revenue Engine all read from — one source of truth, no conflicting versions.</div>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Standalone</span>
+            <span class="pillar-tag">MDM</span>
+            <span class="pillar-tag tag-green">Canadian-hosted</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LAYER 2: INTEGRATION & AI -->
+  <div class="layer-section">
+    <div class="layer-eyebrow">Layer 02 · Integration &amp; AI Infrastructure</div>
+    <h2>Agent Intelligence &amp; <em>System Connectivity</em></h2>
+    <p class="layer-intro">The second layer connects the Canadian Enterprise Stack to the rest of your technology environment and powers the AI agent infrastructure that automates work across it. These three pillars are what make the Stack useful alongside existing tools — not as a replacement for them.</p>
+
+    <div class="pillar-grid" role="list">
+
+      <div class="pillar-card pillar-ai" role="listitem">
+        <div class="pillar-num">03</div>
+        <div class="pillar-body">
+          <div class="pillar-name">Integration Station</div>
+          <div class="pillar-subtitle">Middleware OS · API · MCP · A2A</div>
+          <p class="pillar-desc">Integration Station is Salesboom's middleware operating system: the connectivity layer that allows the Canadian Enterprise Stack to exchange data and instructions with Salesforce, HubSpot, Microsoft Dynamics, Pipedrive, and most major enterprise platforms. It supports REST APIs, MCP (Model Context Protocol) server connections, and A2A (Agent-to-Agent) protocol — meaning it works with both traditional integrations and the emerging generation of AI-native connections.</p>
+          <div class="pillar-fact">Run Salesboom headless alongside an existing CRM — add Canadian sovereignty and AI infrastructure without replacing the system your team already uses.</div>
+          <div class="pillar-fact">MCP and A2A support means third-party AI agents can interact directly with your Salesboom data through standardized protocols, without a human logging in as an intermediary.</div>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Standalone</span>
+            <span class="pillar-tag">MCP</span>
+            <span class="pillar-tag">A2A</span>
+            <span class="pillar-tag">REST API</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar-card pillar-ai" role="listitem">
+        <div class="pillar-num">04</div>
+        <div class="pillar-body">
+          <div class="pillar-name">AMS — Agent Management System</div>
+          <div class="pillar-subtitle">A2A-Ready Agentic Infrastructure · Canada's First</div>
+          <p class="pillar-desc">AMS is Salesboom's AI agent management layer — the first published A2A-capable CRM infrastructure in Canada. AMS deploys autonomous sourcing agents that find, vet, and add leads, opportunities, employees, contractors, skills, and other agents to your CRM, measured against department-level Ideal Customer Profiles. Human-in-the-loop approval is required before any record is added — AMS proposes, your team decides.</p>
+          <div class="pillar-fact">Agents operate through A2A protocol — they communicate directly with each other and with third-party software, without a human logging into each system manually.</div>
+          <div class="pillar-fact">Canada's first CRM with published A2A capability — a measurable lead over US incumbents who are still building toward the same infrastructure.</div>
+          <div class="pillar-tags">
+            <span class="pillar-tag">A2A</span>
+            <span class="pillar-tag">Human-in-loop</span>
+            <span class="pillar-tag">Canada-first</span>
+            <span class="pillar-tag tag-green">Canadian-hosted</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar-card pillar-ai" role="listitem">
+        <div class="pillar-num">05</div>
+        <div class="pillar-body">
+          <div class="pillar-name">Context Engine</div>
+          <div class="pillar-subtitle">Contextual Intelligence Layer</div>
+          <p class="pillar-desc">Context Engine is the intelligence layer that enriches every interaction with the right information at the right moment. It surfaces account history, relationship signals, deal context, and competitive intelligence automatically — before a sales call, during pipeline review, or when an agent is making a recommendation. Context Engine is what makes AI recommendations accurate rather than generic: it grounds model output in your actual customer data.</p>
+          <div class="pillar-fact">Feeds directly into AMS agent recommendations — the agent's proposed actions are grounded in real account context, not pattern-matching on training data alone.</div>
+          <div class="pillar-fact">Meeting-preparation assistants, next-best-action triggers, and contract-risk analysis all run through Context Engine.</div>
+          <div class="pillar-tags">
+            <span class="pillar-tag">AI-native</span>
+            <span class="pillar-tag">Real-time</span>
+            <span class="pillar-tag tag-green">Canadian-hosted</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LAYER 3: GTM & DEMAND -->
+  <div class="layer-section">
+    <div class="layer-eyebrow">Layer 03 · Go-to-Market &amp; Demand Generation</div>
+    <h2>Pipeline Creation &amp; <em>Content Execution</em></h2>
+    <p class="layer-intro">The third layer covers the demand-generation and content side of the revenue lifecycle: finding prospects, managing the message, and systematizing the content that moves deals forward. Three pillars operate here, each deployable independently.</p>
+
+    <div class="pillar-grid" role="list">
+
+      <div class="pillar-card pillar-gtm" role="listitem">
+        <div class="pillar-num">06</div>
+        <div class="pillar-body">
+          <div class="pillar-name">Demandinator</div>
+          <div class="pillar-subtitle">Demand Generation Engine</div>
+          <p class="pillar-desc">Demandinator is Salesboom's demand generation platform: campaign management, outbound sequencing, web-to-lead capture, and bulk-email execution, designed to fill the top of the Revenue Engine pipeline. It handles both inbound conversion (landing pages, form capture, lead routing) and outbound execution (sequence-based outreach, email automation, and campaign analytics) — connected directly to CRM so there is no hand-off gap between marketing pipeline and sales pipeline.</p>
+          <div class="pillar-fact">Campaign and sequence performance feeds directly into Revenue Engine — no manual CSV export, no attribution gap between marketing spend and closed revenue.</div>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Standalone</span>
+            <span class="pillar-tag">Outbound</span>
+            <span class="pillar-tag">Inbound</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar-card pillar-gtm" role="listitem">
+        <div class="pillar-num">07</div>
+        <div class="pillar-body">
+          <div class="pillar-name">Promptuit</div>
+          <div class="pillar-subtitle">Prompt Management System</div>
+          <p class="pillar-desc">Promptuit is Salesboom's prompt management system: a library and governance layer for the AI prompts that drive email drafting, proposal generation, meeting summaries, and outbound messaging. As teams scale their use of AI-generated content, prompt consistency and quality control become as important as template management was in the previous generation of CRM. Promptuit is where those prompts are built, tested, stored, and governed.</p>
+          <div class="pillar-fact">Connects to Salesboom's AI Edition features — prompts are versioned and governed centrally rather than living in individual users' chat history.</div>
+          <div class="pillar-fact">Ensures AI-generated customer communications are consistent with brand standards and compliance requirements before they are sent.</div>
+          <div class="pillar-tags">
+            <span class="pillar-tag">AI governance</span>
+            <span class="pillar-tag">Prompt library</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar-card pillar-gtm" role="listitem">
+        <div class="pillar-num">08</div>
+        <div class="pillar-body">
+          <div class="pillar-name">Content Relationship Management</div>
+          <div class="pillar-subtitle">Content Intelligence · Sales Enablement</div>
+          <p class="pillar-desc">Content Relationship Management (CRM²) closes the gap between the content team and the sales team. It tracks which content assets — case studies, proposals, battle cards, one-pagers — are used at which deal stages, by which reps, with which outcomes. The result is a feedback loop between what marketing produces and what actually moves deals: content that converts gets surfaced automatically; content that doesn't gets flagged for revision.</p>
+          <div class="pillar-fact">Content usage data feeds back into Demandinator — high-performing assets are automatically promoted in outbound sequences.</div>
+          <div class="pillar-fact">Eliminates the problem of reps using outdated or off-brand content because they can't find the current version.</div>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Sales enablement</span>
+            <span class="pillar-tag">Content analytics</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LAYER 4: SERVICES -->
+  <div class="layer-section">
+    <div class="layer-eyebrow">Layer 04 · Implementation Services</div>
+    <h2>Canadian Expertise, <em>Embedded in Your Team</em></h2>
+    <p class="layer-intro">The implementation services layer is what makes the Canadian Enterprise Stack operational. Three delivery models — structured, custom, and fractional — serve different organizational needs and timelines, all delivered by Salesboom's Halifax-based team.</p>
+
+    <div class="pillar-grid" role="list">
+
+      <div class="pillar-card pillar-service" role="listitem">
+        <div class="pillar-num">09</div>
+        <div class="pillar-body">
+          <div class="pillar-name">Fast Track</div>
+          <div class="pillar-subtitle">Structured Implementation · 4–8 Weeks</div>
+          <p class="pillar-desc">Fast Track is Salesboom's structured onboarding path for organizations ready to deploy the Revenue Engine and core pillars quickly. A defined scope, a defined timeline (4–8 weeks), and a dedicated implementation specialist get your team live without a six-month build-out. Fast Track covers configuration, data migration from your existing CRM or spreadsheet, user training, and go-live support.</p>
+          <div class="pillar-fact">Designed for organizations that are ready to move — clear requirements, defined data to migrate, team available for training during the engagement window.</div>
+          <div class="pillar-tags">
+            <span class="pillar-tag">4–8 weeks</span>
+            <span class="pillar-tag tag-green">Fixed scope</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar-card pillar-service" role="listitem">
+        <div class="pillar-num">10</div>
+        <div class="pillar-body">
+          <div class="pillar-name">Built to Suit</div>
+          <div class="pillar-subtitle">Custom Implementation · Bespoke Configuration</div>
+          <p class="pillar-desc">Built to Suit is Salesboom's custom implementation path for organizations with complex requirements: multi-system integrations, custom vertical workflows, regulatory or security requirements beyond the standard configuration, or a platform deployment that spans multiple departments. Salesboom's in-house development team builds to the specification — no third-party implementation partner, no offshore handoff.</p>
+          <div class="pillar-fact">Pricing is project-scoped, not seat-based — the cost reflects the build, not a per-user multiplier on top of it.</div>
+          <div class="pillar-fact">All development work is done by the Halifax team — not contracted out to a partner network with its own overhead and quality variance.</div>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Custom scope</span>
+            <span class="pillar-tag">In-house dev</span>
+            <span class="pillar-tag tag-green">Halifax team</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar-card pillar-service" role="listitem">
+        <div class="pillar-num">11</div>
+        <div class="pillar-body">
+          <div class="pillar-name">People as a Service</div>
+          <div class="pillar-subtitle">Fractional Talent Delivery · Embedded Specialists</div>
+          <p class="pillar-desc">People as a Service is Salesboom's fractional talent model. Rather than selling software alone, Salesboom provides dedicated Canadian professionals — developers, system architects, marketers, data analysts, operations specialists, and CRM concierge teams — embedded in your organization for the duration of the engagement. This is not a managed-service contract or a support ticket queue. It is a cross-functional capability delivered by named individuals with defined accountability.</p>
+          <div class="pillar-fact">Covers the gap that most CRM implementations fall into: the platform is live, but the internal team doesn't have the capacity to drive adoption or build the next phase. People as a Service fills that gap with fractional specialists, not junior contractors.</div>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Fractional</span>
+            <span class="pillar-tag">Embedded</span>
+            <span class="pillar-tag tag-green">Canadian team</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DEPLOYMENT TABLE -->
+  <div class="deployment-section">
+    <h2>How does deployment <em>flexibility</em> work?</h2>
+    <div class="answer-block"><p>Each pillar is designed to deploy independently or as part of the full integrated Stack. Start with Revenue Engine and add pillars as your requirements grow — or deploy the full Stack from day one if the scope is clear. There is no forced bundling and no minimum pillar count.</p></div>
+
+    <div class="deploy-wrap" role="region" aria-label="Pillar deployment options">
+      <table class="deploy-table">
+        <thead>
+          <tr>
+            <th>Pillar</th>
+            <th>Standalone</th>
+            <th>Headless (alongside existing CRM)</th>
+            <th>Full Stack</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Revenue Engine</td><td class="yes-cell">✓ Primary</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+          <tr><td>Data Engine</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+          <tr><td>Integration Station</td><td class="yes-cell">✓</td><td class="yes-cell">✓ Required</td><td class="yes-cell">✓</td></tr>
+          <tr><td>AMS — Agent Management System</td><td class="partial-cell">Requires Integration Station</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+          <tr><td>Context Engine</td><td class="partial-cell">Requires Revenue Engine or Data Engine</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+          <tr><td>Demandinator</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+          <tr><td>Promptuit</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+          <tr><td>Content Relationship Management</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+          <tr><td>Fast Track</td><td class="yes-cell">✓ Any pillar</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+          <tr><td>Built to Suit</td><td class="yes-cell">✓ Any pillar</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+          <tr><td>People as a Service</td><td class="yes-cell">✓ Any pillar</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section" aria-label="Frequently asked questions">
+    <h2 class="faq-section-head">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">What is the Canadian Enterprise Stack?</div>
+      <div class="faq-a">The Canadian Enterprise Stack is Salesboom's ten-pillar enterprise platform: Revenue Engine (CRM + GTM + RevOps), Integration Station (middleware OS), Data Engine (MDM), AMS (Agent Management System), Context Engine (contextual intelligence), Demandinator (demand generation), Promptuit (prompt management), Content Relationship Management, and the implementation services layer — Fast Track, Built to Suit, and People as a Service. Each pillar was built in-house by Salesboom's Halifax team and deploys independently or as a fully integrated system, hosted on 100% Canadian bare-metal infrastructure.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What is Agent-to-Agent (A2A) and why does it matter for CRM?</div>
+      <div class="faq-a">Agent-to-Agent (A2A) is a protocol that allows AI agents to communicate directly with each other and with third-party software systems — without a human logging in as an intermediary for each step. In a CRM context, A2A means a sourcing agent can identify a qualified prospect in one system, check availability in a calendar system, create a lead record in Salesboom's Revenue Engine, and notify a sales rep — all without a human manually moving data between systems. Salesboom's AMS is Canada's first CRM with published A2A capability. Human-in-the-loop approval is required before any record is added to the CRM; the agents propose, the team decides.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can the Canadian Enterprise Stack work alongside Salesforce or HubSpot?</div>
+      <div class="faq-a">Yes. Integration Station is designed for exactly this. Salesboom can operate headless — as a sovereign CRM layer, AI infrastructure, or demand-generation engine — connected to your existing Salesforce, HubSpot, Microsoft Dynamics, or Pipedrive instance via API, MCP, and A2A. You keep the system your team already uses; you add Canadian data sovereignty, agentic AI infrastructure, and RevOps capability on top of it, without a forced migration or a parallel data-entry problem.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What does People as a Service include that a typical managed services contract does not?</div>
+      <div class="faq-a">A typical managed services contract delivers defined outputs from an anonymous service team: tickets resolved, reports produced, uptime maintained. People as a Service delivers embedded specialists — named individuals with specific skills (developer, system architect, CRM administrator, data analyst, marketing operations specialist) — who work inside your organization for the duration of the engagement, with defined accountability for outcomes rather than activities. The difference is between renting capacity and embedding a cross-functional team that owns results.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How long does a Fast Track implementation take, and what does it cover?</div>
+      <div class="faq-a">Fast Track implementations run 4–8 weeks from kickoff to go-live. The scope covers Revenue Engine configuration (fields, layouts, workflows, and reports tailored to your sales process), data migration from your existing CRM or spreadsheet, user training for your team, and go-live support through the first 30 days. Fast Track is the right path when requirements are clear, the data to be migrated is reasonably clean, and the team has capacity to engage during the implementation window. Complex integrations, custom development, or multi-department deployments are scoped as Built to Suit engagements instead.</div>
+    </div>
+  </div>
+
+  <!-- PAGE CTA -->
+  <div class="page-cta">
+    <h3>Explore the Stack for your organization.</h3>
+    <p>Start with a single pillar or deploy the full Canadian Enterprise Stack. Every engagement is scoped to what you need — no forced bundling, no minimum commitment beyond what the project requires.</p>
+    <div class="page-cta-btns">
+      <a href="#" class="btn-green">Start Free (CAD)</a>
+      <a href="#" class="btn-outline-blue">Book a Conversation →</a>
+    </div>
+  </div>
+</div>
