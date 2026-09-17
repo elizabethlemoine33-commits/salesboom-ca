@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://salesboom.bynorthlight.ca/sitemap.xml
