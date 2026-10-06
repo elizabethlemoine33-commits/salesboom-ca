@@ -3,5 +3,3 @@ description: "Pre-engagement proposal prepared by Northlight Advisory Services"
 baseurl: ""
 url: "https://salesboom.bynorthlight.ca"
 
-plugins:
-  - jekyll-sitemap
